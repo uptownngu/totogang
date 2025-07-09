@@ -4997,7 +4997,7 @@ async function loadattendancesData(userId, token) {
     
     try {
         const attendancesResponse = await fetch(
-            `http://localhost:1337/api/attendances?populate=*&sort=date:desc`,
+            `http://141.164.52.65:1337/api/attendances?populate=*&sort=date:desc`,
             {
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -5162,7 +5162,7 @@ async function doAttendance() {
             const todayEndKST = new Date(dateStr + 'T23:59:59+09:00');
             
             const checkResponse = await fetch(
-              `http://localhost:1337/api/attendances?filters[date][$gte]=${todayStartKST.toISOString()}&filters[date][$lte]=${todayEndKST.toISOString()}`,
+              `http://141.164.52.65:1337/api/attendances?filters[date][$gte]=${todayStartKST.toISOString()}&filters[date][$lte]=${todayEndKST.toISOString()}`,
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -5259,7 +5259,7 @@ async function doAttendance() {
     }
 };
             
-            const response = await fetch('http://localhost:1337/api/attendances', {
+            const response = await fetch('http://141.164.52.65:1337/api/attendances', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -5383,7 +5383,7 @@ const strapiUser = JSON.parse(localStorage.getItem('user') || '{}');
 
 if (token && strapiUser.id) {
     try {
-        await fetch(`http://localhost:1337/api/users/${strapiUser.id}`, {
+        await fetch(`http://141.164.52.65:1337/api/users/${strapiUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -5517,7 +5517,7 @@ const strapiUser = JSON.parse(localStorage.getItem('user') || '{}');
 
 if (token && strapiUser.id) {
     try {
-        await fetch(`http://localhost:1337/api/users/${strapiUser.id}`, {
+        await fetch(`http://141.164.52.65:1337/api/users/${strapiUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -5662,7 +5662,7 @@ function switchToLogin() {
 // 아이디 중복 체크
 async function checkIdAvailable(id) {
     try {
-        const response = await fetch(`http://localhost:1337/api/users?filters[username][$eq]=${id}`);
+        const response = await fetch(`http://141.164.52.65:1337/api/users?filters[username][$eq]=${id}`);
         const data = await response.json();
         return data.length === 0;
     } catch (error) {
@@ -5752,7 +5752,7 @@ async function doSignup() {
     }
     
    try {
-    const response = await fetch('http://localhost:1337/api/auth/local/register', {
+    const response = await fetch('http://141.164.52.65:1337/api/auth/local/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -5768,7 +5768,7 @@ async function doSignup() {
     
     if (response.ok) {
         // 프로필 업데이트
-        await fetch(`http://localhost:1337/api/users/${data.user.id}`, {
+        await fetch(`http://141.164.52.65:1337/api/users/${data.user.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -5808,7 +5808,7 @@ async function doLogin() {
     }
     
     try {
-        const response = await fetch('http://localhost:1337/api/auth/local', {
+        const response = await fetch('http://141.164.52.65:1337/api/auth/local', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -5891,7 +5891,7 @@ async function handleQuickLogin() {
     }
     
     try {
-        const response = await fetch('http://localhost:1337/api/auth/local', {
+        const response = await fetch('http://141.164.52.65:1337/api/auth/local', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -5934,7 +5934,7 @@ async function handleQuickLogin() {
             // 포인트 이력 불러오기
             try {
                const pointResponse = await fetch(
-   `http://localhost:1337/api/point-histories?populate=*&filters[users_permissions_user][id][$eq]=${data.user.id}&sort=createdAt:desc&pagination[limit]=50`,
+   `http://141.164.52.65:1337/api/point-histories?populate=*&filters[users_permissions_user][id][$eq]=${data.user.id}&sort=createdAt:desc&pagination[limit]=50`,
     {
         headers: {
             'Authorization': `Bearer ${data.jwt}`
@@ -6678,7 +6678,7 @@ createNotification(NOTIFICATION_TYPES.POINT, {
                 }
             };
             
-            const response = await fetch('http://localhost:1337/api/comments', {
+            const response = await fetch('http://141.164.52.65:1337/api/comments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -6732,7 +6732,7 @@ async function deleteComment(postType, postId, commentId) {
             const token = localStorage.getItem('token');
             if (token && comment.strapiId) {
                 const deleteResponse = await fetch(
-                    `http://localhost:1337/api/comments/${comment.strapiId}`,
+                    `http://141.164.52.65:1337/api/comments/${comment.strapiId}`,
                     {
                         method: 'DELETE',
                         headers: {
@@ -6766,7 +6766,7 @@ function renderPosts(postType) {
             console.log('🔍 API 호출 시작:', cleanPostType);
             
             // 기본 조회 (populate 제거하여 오류 방지)
-          const url = `http://localhost:1337/api/posts?filters[board][slug][$eq]=${cleanPostType}&sort=createdAt:desc&populate=*`;
+          const url = `http://141.164.52.65:1337/api/posts?filters[board][slug][$eq]=${cleanPostType}&sort=createdAt:desc&populate=*`;
             console.log('📡 요청 URL:', url);
 
             
@@ -7168,7 +7168,7 @@ function vote(postType, postId, voteType) {
             const token = localStorage.getItem('token');
             if (token) {
                 // 게시글 검색하여 documentId 찾기
-               const searchResponse = await fetch(`http://localhost:1337/api/posts?filters[id][$eq]=${parseInt(postId) || postId}`);
+               const searchResponse = await fetch(`http://141.164.52.65:1337/api/posts?filters[id][$eq]=${parseInt(postId) || postId}`);
                 
                 if (searchResponse.ok) {
                     const searchData = await searchResponse.json();
@@ -7180,7 +7180,7 @@ function vote(postType, postId, voteType) {
                         console.log('찾은 documentId:', documentId);
                         
                         // documentId로 업데이트
-                        const updateResponse = await fetch(`http://localhost:1337/api/posts/${documentId}`, {
+                        const updateResponse = await fetch(`http://141.164.52.65:1337/api/posts/${documentId}`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -7208,7 +7208,7 @@ function vote(postType, postId, voteType) {
                                     }
                                 };
                                 
-                                const voteResponse = await fetch('http://localhost:1337/api/votes', {
+                                const voteResponse = await fetch('http://141.164.52.65:1337/api/votes', {
                                     method: 'POST',
                                     headers: {
                                         'Content-Type': 'application/json',
@@ -7296,11 +7296,11 @@ function showPostDetail(postType, postId) {
       post.attachments.forEach((file, index) => {
             // Strapi 파일인지 로컬 파일인지 확인
             if (file.url) {  // Strapi 파일
-                attachmentHTML += `<div class="attachment-item" onclick="window.open('http://localhost:1337${file.url}', '_blank')">📄 ${file.name}</div>`;
+                attachmentHTML += `<div class="attachment-item" onclick="window.open('http://141.164.52.65:1337${file.url}', '_blank')">📄 ${file.name}</div>`;
                 
                 // 이미지인 경우 바로 표시
                 if (file.mime && file.mime.startsWith('image/')) {
-                    attachmentHTML += `<img src="http://localhost:1337${file.url}" style="max-width: 100%; margin-top: 10px; border-radius: 8px;">`;
+                    attachmentHTML += `<img src="http://141.164.52.65:1337${file.url}" style="max-width: 100%; margin-top: 10px; border-radius: 8px;">`;
                 }
             } else if (file.type && file.type.startsWith('image/')) {
                 // FileReader를 사용해서 로컬 이미지 표시
@@ -7862,7 +7862,7 @@ createNotification(NOTIFICATION_TYPES.POINT, {
             const userLocal = userData[currentUser];
             
             try {
-                await fetch(`http://localhost:1337/api/users/${userStrapi.id}`, {
+                await fetch(`http://141.164.52.65:1337/api/users/${userStrapi.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -8101,7 +8101,7 @@ const titleToSave = newPost.title;
                     formData.append('files', file);
                     
                     try {
-                        const uploadResponse = await fetch('http://localhost:1337/api/upload', {
+                        const uploadResponse = await fetch('http://141.164.52.65:1337/api/upload', {
                             method: 'POST',
                             headers: {
                                 'Authorization': `Bearer ${token}`
@@ -8122,7 +8122,7 @@ const titleToSave = newPost.title;
                 }
             }
             
-            const boardResponse = await fetch(`http://localhost:1337/api/boards?filters[slug][$eq]=${type}`);
+            const boardResponse = await fetch(`http://141.164.52.65:1337/api/boards?filters[slug][$eq]=${type}`);
             const boardData = await boardResponse.json();
             const boardId = boardData.data[0]?.id;
 
@@ -8155,7 +8155,7 @@ const titleToSave = newPost.title;
                 
                 console.log('📤 보내는 데이터:', JSON.stringify(postData, null, 2));
 
-                const response = await fetch('http://localhost:1337/api/posts', {
+                const response = await fetch('http://141.164.52.65:1337/api/posts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -8318,7 +8318,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
         formData.append('files', file);
         
         try {
-            const uploadResponse = await fetch('http://localhost:1337/api/upload', {
+            const uploadResponse = await fetch('http://141.164.52.65:1337/api/upload', {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -8339,7 +8339,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
     }
 }
             
-            const boardResponse = await fetch(`http://localhost:1337/api/boards?filters[slug][$eq]=${type}`);
+            const boardResponse = await fetch(`http://141.164.52.65:1337/api/boards?filters[slug][$eq]=${type}`);
             const boardData = await boardResponse.json();
             const boardId = boardData.data[0]?.id;
 
@@ -8368,7 +8368,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
                 
                 console.log('📤 보내는 데이터:', JSON.stringify(postData, null, 2));
 
-                const response = await fetch('http://localhost:1337/api/posts', {
+                const response = await fetch('http://141.164.52.65:1337/api/posts', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -8518,7 +8518,7 @@ function removeFromBlacklist(nickname) {
 async function renderUserRanking() {
     try {
         // Strapi에서 사용자 목록 가져오기
-        const response = await fetch('http://localhost:1337/api/users?sort=points:desc&pagination[limit]=10');
+        const response = await fetch('http://141.164.52.65:1337/api/users?sort=points:desc&pagination[limit]=10');
         
         if (response.ok) {
             const data = await response.json();
@@ -9846,7 +9846,7 @@ async function saveEdit() {
             if (token) {
                 // 1. 게시글 검색하여 documentId 찾기
                 const searchResponse = await fetch(
-                    `http://localhost:1337/api/posts?filters[id][$eq]=${parseInt(editingPost.id) || editingPost.id}`,
+                    `http://141.164.52.65:1337/api/posts?filters[id][$eq]=${parseInt(editingPost.id) || editingPost.id}`,
                     {
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -9882,7 +9882,7 @@ async function saveEdit() {
                         };
                         
                         const updateResponse = await fetch(
-                            `http://localhost:1337/api/posts/${documentId}`,
+                            `http://141.164.52.65:1337/api/posts/${documentId}`,
                             {
                                 method: 'PUT',
                                 headers: {
@@ -9936,7 +9936,7 @@ async function deletePostWithConfirm(postType, postId) {
             if (token) {
                 // 1. 게시글 검색하여 documentId 찾기
                 const searchResponse = await fetch(
-                    `http://localhost:1337/api/posts?filters[id][$eq]=${parseInt(postId) || postId}`,
+                    `http://141.164.52.65:1337/api/posts?filters[id][$eq]=${parseInt(postId) || postId}`,
                     {
                         headers: {
                             'Authorization': `Bearer ${token}`
@@ -9952,7 +9952,7 @@ async function deletePostWithConfirm(postType, postId) {
                         
                         // 2. documentId로 삭제
                         const deleteResponse = await fetch(
-                            `http://localhost:1337/api/posts/${documentId}`,
+                            `http://141.164.52.65:1337/api/posts/${documentId}`,
                             {
                                 method: 'DELETE',
                                 headers: {
@@ -10018,7 +10018,7 @@ function openSearchModal() {
     
   // Strapi에서 먼저 검색
     try {
-        const searchUrl = `http://localhost:1337/api/posts?filters[title][$containsi]=${searchTerm}&populate=board`;
+        const searchUrl = `http://141.164.52.65:1337/api/posts?filters[title][$containsi]=${searchTerm}&populate=board`;
         const response = await fetch(searchUrl);
         
         if (response.ok) {
