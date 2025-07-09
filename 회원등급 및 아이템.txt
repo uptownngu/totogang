@@ -1,0 +1,38 @@
+회원등급 및 아이템 
+
+// 레벨 시스템 데이터
+const levelSystem = {
+    levels: [
+        { level: 1, exp: 0, title: '토린이' },
+        { level: 2, exp: 100, title: '국밥배터' },
+        { level: 3, exp: 300, title: '대출보유자' },
+        { level: 4, exp: 600, title: '생도' },
+        { level: 5, exp: 1000, title: '분석충' },
+        { level: 6, exp: 1500, title: '패턴연구소장' },
+        { level: 7, exp: 2200, title: '소총판' },
+        { level: 8, exp: 3000, title: '대총판' },
+        { level: 9, exp: 4000, title: '토사장' },
+        { level: 10, exp: 5000, title: '회장님' }
+    ]
+};
+
+// 상점 아이템 데이터
+const shopItems = {
+    badges: [
+        { id: 'badge_fire', name: '비상금대출', icon: '🔥', price: 500000, desc: '입문자의 상징' },
+        { id: 'badge_star', name: '맥스윈', icon: '⭐', price: 800000, desc: '10충 100마감의 증표' },
+        { id: 'badge_crown', name: '왕모자', icon: '👑', price: 1000000, desc: '환자의 상징' },
+        { id: 'badge_diamond', name: '3부다이아', icon: '💎', price: 1100000, desc: '맥스먹고 삼' },
+        { id: 'badge_rocket', name: '우주선', icon: '🚀', price: 1200000, desc: '1억 마감의 증표' },
+        { id: 'badge_trophy', name: '바롱도르', icon: '🏆', price: 1800000, desc: '그저 GOAT' }
+    ],
+    effects: [
+        { id: 'effect_glow', name: '야옹이', icon: '✨', price: 1000000, desc: '인사되는 반짝이 효과' },
+        { id: 'effect_rainbow', name: '수수깡 깻잎', icon: '🌈', price: 1500000, desc: '진짜 인사되는 무지개 효과' },
+        { id: 'effect_gold', name: '대장님', icon: '🌟', price: 20000000, desc: '전국구의 황금색 닉네임 효과' }
+    ],
+    titles: [
+        { id: 'title_legend', name: '전설의', icon: '🏅', price: 30000000, desc: '닉네임 앞에 [누적1억] 칭호 추가' },
+        { id: 'title_master', name: '마스터', icon: '🎖️', price: 25000000, desc: '닉네임 앞에 [누적10억] 칭호 추가' },
+        { id: 'title_vip', name: 'VIP', icon: '💳', price: 200000000, desc: '닉네임 앞에 [VVVVIP] 칭호 추가' }
+    ]

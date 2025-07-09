@@ -1,0 +1,7 @@
+서버킬떄 이거 보세요 
+
+cd Desktop\five-dragons\backend  입력하고 
+
+npm run develop 
+
+다섯 번 이상 이걸 켰으면 진짜 병신년인거임 ㅇㅈ? 

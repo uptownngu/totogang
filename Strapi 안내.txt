@@ -1,0 +1,6 @@
+Attendance - 	data ( Date , Required field 체크)
+			streak ( Number, Interger, 1) 
+			points ( Number	
+			user 	 ( Relation - oneToOne with User (from: users-permission) Attendance has and belongs to one 				User        오른쪽 fieldname : attendances  		
+
+Board

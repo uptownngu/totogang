@@ -1,0 +1,12 @@
+
+
+
+테스트 계정:
+
+ID: testuser
+PW: Test1234!
+
+
+Strapi 서버: http://localhost:1337
+현재 토큰은 localStorage에 저장됨
+
