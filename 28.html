@@ -311,7 +311,11 @@ span[style*="color: #d97706"] {
 
 /* 링크 색상 */
 a {
-    color: #4db8ff !important;
+    color: #e0e0e0 !important;
+}
+
+a:hover {
+    color: #dc2626 !important;
 }
 
 .login-links a {
@@ -321,7 +325,6 @@ a {
 .login-links a:hover {
     color: #4db8ff !important;
 }
-
 /* 텍스트 색상 조정 */
 .stat-label, .post-meta, .comment-date, .notification-time {
     color: #909090 !important;
@@ -714,6 +717,7 @@ img {
             width: 100%;
             border-collapse: collapse;
             margin-top: 16px;
+	      table-layout: fixed;
         }
 
         .board-table th {
@@ -726,28 +730,33 @@ img {
             border-bottom: 2px solid #e9ecef;
         }
 
-        .board-table td {
-            padding: 14px 12px;
-            border-bottom: 1px solid #f1f3f5;
-            font-size: 14px;
-            color: #495057;
-        }
+      .board-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #404040;
+    font-size: 14px;
+    color: #e0e0e0;
+}
 
-        .board-table tr:hover {
-            background: #f8f9fa;
-        }
+.board-table tr:hover {
+    background: #3a3a3a;
+}
 
-        .board-table .title a {
-            color: #212529;
-            text-decoration: none;
-            font-weight: 400;
-        }
+.board-table .title a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 400;
+}
 
-        .board-table .title a:hover {
-            color: #dc2626;
-            text-decoration: underline;
-        }
+.board-table .title a {
+    color: #e0e0e0 !important;
+    text-decoration: none;
+    font-weight: 400;
+}
 
+.board-table .title a:hover {
+    color: #dc2626 !important;
+    text-decoration: underline;
+}
         .board-table .badge {
             display: inline-block;
             padding: 2px 8px;
@@ -1033,45 +1042,68 @@ img {
         }
 
         /* Form Styles */
-        .write-form {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
+      .write-form {
+    background: #2d2d2d !important;
+    border: 1px solid #404040 !important;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
 
         .form-group {
             margin-bottom: 16px;
         }
 
-        .form-label {
-            display: block;
-            margin-bottom: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #212529;
-        }
+       .form-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e0e0e0 !important;
+}
 
-        .form-control {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #dee2e6;
-            border-radius: 6px;
-            font-size: 14px;
-            transition: border-color 0.2s ease;
-        }
+      .form-control {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #404040 !important;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
 
-        .form-control:focus {
-            outline: none;
-            border-color: #dc2626;
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
-        }
+.form-control:focus {
+    outline: none;
+    border-color: #dc2626 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    background: #222 !important;
+}
 
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
+     textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+select.form-control option {
+    background: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+
+.write-form h3 {
+    color: #e0e0e0 !important;
+}
+
+small {
+    color: #b0b0b0 !important;
+}
+
+
+
+
+
 
         .btn {
             padding: 10px 20px;
@@ -4152,47 +4184,47 @@ img {
                     </div>
                     
                     <table class="board-table">
-                        <thead>
-                            <tr>
-                                <th width="60">번호</th>
-                                <th width="80">지역</th>
-                                <th width="100">업소테마</th>
-                                <th>제목</th>
-                                <th width="100">글쓴이</th>
-                                <th width="100">날짜</th>
-                                <th width="60">조회</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>87</td>
-                                <td><span class="status-badge" style="background: #fff3cd; color: #856404;">강남</span></td>
-                                <td>텐프로</td>
-                                <td class="title"><a href="#">[강남] 레X스 방문 후기 (만족)</a></td>
-                                <td>night_owl</td>
-                                <td>2025.06.26</td>
-                                <td>523</td>
-                            </tr>
-                            <tr>
-                                <td>86</td>
-                                <td><span class="status-badge" style="background: #d1ecf1; color: #0c5460;">홍대</span></td>
-                                <td>가라오케</td>
-                                <td class="title"><a href="#">[홍대] 퍼X트 가라오케 솔직후기</a></td>
-                                <td>party_king</td>
-                                <td>2025.06.25</td>
-                                <td>412</td>
-                            </tr>
-                            <tr>
-                                <td>85</td>
-                                <td><span class="status-badge" style="background: #f8d7da; color: #721c24;">이태원</span></td>
-                                <td>클럽</td>
-                                <td class="title"><a href="#">[이태원] 주말 클럽 투어 후기</a></td>
-                                <td>clubber</td>
-                                <td>2025.06.24</td>
-                                <td>356</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <thead>
+        <tr>
+            <th style="width: 60px; text-align: center;">번호</th>
+            <th style="width: 80px; text-align: center;">지역</th>
+            <th style="width: 100px; text-align: center;">업소테마</th>
+            <th style="text-align: left;">제목</th>
+            <th style="width: 100px; text-align: center;">글쓴이</th>
+            <th style="width: 100px; text-align: center;">날짜</th>
+            <th style="width: 60px; text-align: center;">조회</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: center;">87</td>
+            <td style="text-align: center;"><span class="status-badge" style="background: #fff3cd; color: #856404;">강남</span></td>
+            <td style="text-align: center;">텐프로</td>
+            <td class="title"><a href="#">[강남] 레X스 방문 후기 (만족)</a></td>
+            <td style="text-align: center;">night_owl</td>
+            <td style="text-align: center;">2025.06.26</td>
+            <td style="text-align: center;">523</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">86</td>
+            <td style="text-align: center;"><span class="status-badge" style="background: #d1ecf1; color: #0c5460;">홍대</span></td>
+            <td style="text-align: center;">가라오케</td>
+            <td class="title"><a href="#">[홍대] 퍼X트 가라오케 솔직후기</a></td>
+            <td style="text-align: center;">party_king</td>
+            <td style="text-align: center;">2025.06.25</td>
+            <td style="text-align: center;">412</td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">85</td>
+            <td style="text-align: center;"><span class="status-badge" style="background: #f8d7da; color: #721c24;">이태원</span></td>
+            <td style="text-align: center;">클럽</td>
+            <td class="title"><a href="#">[이태원] 주말 클럽 투어 후기</a></td>
+            <td style="text-align: center;">clubber</td>
+            <td style="text-align: center;">2025.06.24</td>
+            <td style="text-align: center;">356</td>
+        </tr>
+    </tbody>
+</table>
                 </div>
 
                 <div id="freeboard" class="page">
@@ -5141,159 +5173,146 @@ const isToday = day === today.getDate() &&
 
 // 출석체크 실행
 async function doAttendance() {
+    if (!currentUser) {
+        alert('로그인 후 이용 가능합니다.');
+        return;
+    }
+    
     // userData 초기화 확인
     if (!userData[currentUser]) {
         initUserData(currentUser);
     }
     const user = userData[currentUser];
-
-
- if (!user.attendance) {
-        user.attendance = {
-            lastCheck: null,
-            streak: 0,
-            history: [],
-            monthlyChecks: {}
-        };
-    }
     
     // 한국 시간 기준으로 날짜 계산
-    const now = new Date();    const koreanOffset = 9 * 60 * 60 * 1000; // 9시간을 밀리초로
+    const now = new Date();
+    const koreanOffset = 9 * 60 * 60 * 1000;
     const koreanTime = new Date(now.getTime() + koreanOffset);
     const dateStr = koreanTime.toISOString().split('T')[0];
     
-    // 이미 출석체크 했는지 확인
+    // 로컬에서 먼저 체크
     if (user.attendances.lastCheck === dateStr) {
         alert('오늘은 이미 출석체크를 하셨습니다!');
         renderattendancesCalendar();
         return;
     }
     
-    // Strapi에서 오늘 출석했는지 다시 확인
     try {
         const token = localStorage.getItem('token');
         const strapiUser = JSON.parse(localStorage.getItem('user') || '{}');
         
-        if (token && strapiUser.id) {
-            // 한국 시간 오늘 00:00 ~ 23:59:59를 UTC로 변환
-            const todayStartKST = new Date(dateStr + 'T00:00:00+09:00');
-            const todayEndKST = new Date(dateStr + 'T23:59:59+09:00');
-            
-            const checkResponse = await fetch(
-              `http://141.164.52.65:1337/api/attendances?filters[date][$gte]=${todayStartKST.toISOString()}&filters[date][$lte]=${todayEndKST.toISOString()}`,
-                {
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                }
-            );
-            
-            if (checkResponse.ok) {
-                const checkData = await checkResponse.json();
-              if (checkData.data && checkData.data.length > 0) {
-    // 이미 서버에 오늘 출석 기록이 있음
-    alert('오늘은 이미 출석체크를 하셨습니다!');
-    
-    // 로컬 데이터 업데이트
-    user.attendance.lastCheck = dateStr;
-    user.attendance.monthlyChecks[dateStr] = true;
-    user.attendance.streak = checkData.data[0].attributes?.streak || checkData.data[0].streak || 1;
-                    
-                    renderattendancesCalendar();
-                    return;
-                }
-            }
+        if (!token || !strapiUser.id) {
+            alert('로그인이 필요합니다.');
+            return;
         }
-    } catch (error) {
-        console.error('출석 중복 체크 오류:', error);
-    }
-    
-    // 연속 출석 체크
-    const yesterday = new Date(koreanTime);
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().split('T')[0];
-    
-    if (user.attendances.lastCheck === yesterdayStr) {
-        user.attendances.streak++;
-    } else {
-        user.attendances.streak = 1;
-    }
-    
-    // 출석 기록
-    user.attendances.lastCheck = dateStr;
-    user.attendances.monthlyChecks[dateStr] = true;
-    user.attendances.history.push(dateStr);
-    
-    // 보상 계산
-    let baseReward = 100;
-    let streakBonus = Math.min(user.attendances.streak * 10, 200);
-    let totalReward = baseReward + streakBonus;
-    
-    // 7일, 30일 연속 출석 특별 보상
-    if (user.attendances.streak === 7) {
-        totalReward += 500;
-        showFloatingText('7일 연속 출석 달성! +500P', '#ffd700');
-    } else if (user.attendances.streak === 30) {
-        totalReward += 2000;
-        showFloatingText('30일 연속 출석 달성! +2000P', '#ffd700');
-    }
-    
-    // 포인트 지급
-    gameState.userPoints += totalReward;
-    addExp(50, '출석체크');
-    
-    // 알림
-    createNotification(NOTIFICATION_TYPES.POINT, {
-        points: totalReward,
-        reason: `출석체크 (${user.attendances.streak}일 연속)`
-    });
-    
-    // 화면 업데이트
-    updateDisplay();
-    renderattendancesCalendar();
-    
-    // 성공 메시지
-    alert(`출석체크 완료!\n${totalReward}P를 획득했습니다!\n(${user.attendances.streak}일 연속 출석)`);
-
-    // Strapi에 출석 기록 저장
-    try {
-        const token = localStorage.getItem('token');
-        const strapiUser = JSON.parse(localStorage.getItem('user') || '{}');
         
-        if (token && strapiUser.id) {
-
- console.log('strapiUser 전체:', strapiUser);
-        console.log('strapiUser.id 값:', strapiUser.id);
-        console.log('strapiUser.id 타입:', typeof strapiUser.id);
-
-           const attendanceData = {
-    data: {
-        date: new Date(dateStr + 'T12:00:00+09:00').toISOString(),
-        streak: user.attendance.streak,
-        points: totalReward,
-        user: {
-            connect: [strapiUser.id]
-        }
-    }
-};
-            
-            const response = await fetch('http://141.164.52.65:1337/api/attendances', {
-                method: 'POST',
+        // 서버에서 오늘 출석 기록 확인
+        const todayStartKST = new Date(dateStr + 'T00:00:00+09:00');
+        const todayEndKST = new Date(dateStr + 'T23:59:59+09:00');
+        
+        const checkResponse = await fetch(
+            `http://141.164.52.65:1337/api/attendances?filters[date][$gte]=${todayStartKST.toISOString()}&filters[date][$lte]=${todayEndKST.toISOString()}&filters[user][id][$eq]=${strapiUser.id}`,
+            {
                 headers: {
-                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(attendancesData)
-            });
-            
-            if (response.ok) {
-                console.log('✅ 출석체크 저장 성공!');
-            } else {
-                console.error('❌ 출석체크 저장 실패');
+                }
+            }
+        );
+        
+        if (checkResponse.ok) {
+            const checkData = await checkResponse.json();
+            if (checkData.data && checkData.data.length > 0) {
+                alert('오늘은 이미 출석체크를 하셨습니다!');
+                // 서버 데이터로 로컬 동기화
+                const serverRecord = checkData.data[0];
+                user.attendances.lastCheck = dateStr;
+                user.attendances.monthlyChecks[dateStr] = true;
+                user.attendances.streak = serverRecord.streak || 1;
+                renderattendancesCalendar();
+                return;
             }
         }
+        
+        // 연속 출석 체크
+        const yesterday = new Date(koreanTime);
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toISOString().split('T')[0];
+        
+        let newStreak = 1;
+        if (user.attendances.lastCheck === yesterdayStr) {
+            newStreak = user.attendances.streak + 1;
+        }
+        
+        // 보상 계산
+        let baseReward = 100;
+        let streakBonus = Math.min(newStreak * 10, 200);
+        let totalReward = baseReward + streakBonus;
+        
+        // 특별 보상
+        if (newStreak === 7) {
+            totalReward += 500;
+        } else if (newStreak === 30) {
+            totalReward += 2000;
+        }
+        
+        // 서버에 출석 기록 저장 (먼저 시도)
+        const attendanceData = {
+            data: {
+                date: new Date(dateStr + 'T12:00:00+09:00').toISOString(),
+                streak: newStreak,
+                points: totalReward,
+                user: strapiUser.id
+            }
+        };
+        
+        const saveResponse = await fetch('http://141.164.52.65:1337/api/attendances', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(attendanceData)
+        });
+        
+        if (!saveResponse.ok) {
+            throw new Error('서버 저장 실패');
+        }
+        
+        // 서버 저장 성공 후에만 로컬 업데이트
+        user.attendances.lastCheck = dateStr;
+        user.attendances.monthlyChecks[dateStr] = true;
+        user.attendances.history.push(dateStr);
+        user.attendances.streak = newStreak;
+        
+        // 포인트 지급
+        gameState.userPoints += totalReward;
+        addExp(50, '출석체크');
+        
+        // 특별 보상 메시지
+        if (newStreak === 7) {
+            showFloatingText('7일 연속 출석 달성! +500P', '#ffd700');
+        } else if (newStreak === 30) {
+            showFloatingText('30일 연속 출석 달성! +2000P', '#ffd700');
+        }
+        
+        // 알림
+        createNotification(NOTIFICATION_TYPES.POINT, {
+            points: totalReward,
+            reason: `출석체크 (${newStreak}일 연속)`
+        });
+        
+        // 화면 업데이트
+        updateDisplay();
+        renderattendancesCalendar();
+        
+        // 성공 메시지
+        alert(`출석체크 완료!\n${totalReward}P를 획득했습니다!\n(${newStreak}일 연속 출석)`);
+        
+        console.log('✅ 출석체크 저장 성공!');
+        
     } catch (error) {
-        console.error('출석체크 API 오류:', error);
+        console.error('출석체크 오류:', error);
+        alert('출석체크 중 오류가 발생했습니다. 다시 시도해주세요.');
     }
 }
 
@@ -5575,7 +5594,7 @@ function createModals() {
     // 로그인 모달
     const loginModalHTML = `
         <div id="loginModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; width: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+           <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2d2d2d; padding: 30px; border-radius: 12px; width: 800px; max-width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
                 <h2 style="margin-bottom: 20px; color: #212529;">로그인</h2>
                 <div style="margin-bottom: 16px;">
                     <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500;">아이디</label>
@@ -6043,10 +6062,10 @@ function updateLoginBox() {
                 <div class="level-progress">
                     <div class="level-progress-bar" style="width: ${expPercent}%"></div>
                 </div>
-                <div class="level-info">
-                    <span>EXP: ${user.exp}</span>
-                    <span>${nextLevel ? nextLevel.exp : 'MAX'}</span>
-                </div>
+               <div class="level-info" style="color: #e0e0e0;">
+    <span style="color: #e0e0e0;">EXP: ${user.exp}</span>
+    <span style="color: #e0e0e0;">${nextLevel ? nextLevel.exp : 'MAX'}</span>
+</div>
             </div>
             <div class="quick-menu">
                 <button class="quick-menu-btn" onclick="openattendances()">
@@ -6359,33 +6378,8 @@ function renderPopularPosts() {
                     userVote: null
                 }
             ],
-            entertainment: [
-                {
-                    id: 87,
-                    title: "[강남] 레X스 방문 후기 (만족)",
-                    author: "night_owl",
-                    date: "2025.06.26",
-                    area: "강남",
-                    theme: "텐프로",
-                    content: "강남 레X스 다녀왔습니다. 서비스나 분위기 모두 만족스러웠어요.",
-                    likes: 89,
-                    dislikes: 12,
-                    userVote: null
-                },
-                {
-                    id: 86,
-                    title: "[홍대] 퍼X트 가라오케 솔직후기",
-                    author: "party_king",
-                    date: "2025.06.25",
-                    area: "홍대",
-                    theme: "가라오케",
-                    content: "홍대 퍼X트 가라오케 후기입니다. 시설은 괜찮은데 가격이 좀 비싸네요.",
-                    likes: 34,
-                    dislikes: 7,
-                    userVote: null
-                }
-            ],
-guarantee: [], 
+           entertainment: [],
+            guarantee: [], 
 generalPromo: [],    
 freeMoney: [],
 blacklist: []
@@ -6870,19 +6864,45 @@ postsData[cleanPostType] = [...newPosts, ...postsData[cleanPostType]];
                 </tr>
             `;
         });
-    } else {
-        posts.forEach(post => {
-            tableBody += `
-                <tr>
-                    <td>${post.id}</td>
-                    <td class="title"><a href="#" onclick="showPostDetail('${postType}', ${post.id})">${post.title}</a></td>
-                    <td>${post.author}</td>
-                    <td>${post.date}</td>
-                    <td>${post.views || 0}</td>
-                </tr>
-            `;
-        });
-    }
+} else if (postType === 'entertainment') {
+    posts.forEach(post => {
+        let areaDisplay = '-';
+        if (post.area) {
+            if (post.area.length > 3) {
+                const mid = Math.ceil(post.area.length / 2);
+                areaDisplay = `<span class="status-badge" style="background: #fff3cd; color: #856404; line-height: 1.2; padding: 6px 8px;">${post.area.substring(0, mid)}<br>${post.area.substring(mid)}</span>`;
+            } else {
+                areaDisplay = `<span class="status-badge" style="background: #fff3cd; color: #856404;">${post.area}</span>`;
+            }
+        }
+
+        tableBody += `
+            <tr>
+                <td style="text-align: center; color: #e0e0e0;">${post.id}</td>
+                <td style="text-align: center; color: #e0e0e0;">
+                    ${areaDisplay}
+                </td>
+                <td style="text-align: center; color: #e0e0e0;">${post.theme || '-'}</td>
+                <td class="title"><a href="#" onclick="showPostDetail('${postType}', ${post.id})">${post.title}</a></td>
+                <td style="text-align: center; color: #e0e0e0;">${post.author}</td>
+                <td style="text-align: center; color: #e0e0e0;">${post.date}</td>
+                <td style="text-align: center; color: #e0e0e0;">${post.views || 0}</td>
+            </tr>
+        `;
+    });
+} else {
+    posts.forEach(post => {
+        tableBody += `
+            <tr>
+                <td>${post.id}</td>
+                <td class="title"><a href="#" onclick="showPostDetail('${postType}', ${post.id})">${post.title}</a></td>
+                <td>${post.author}</td>
+                <td>${post.date}</td>
+                <td>${post.views || 0}</td>
+            </tr>
+        `;
+    });
+}
     
     // 테이블에 렌더링
     const tbody = document.querySelector(`#${postType} .board-table tbody, #${postType}-tbody`);
@@ -7111,28 +7131,12 @@ function removeFile(boardType, index) {
 	    lastAutoChargeDate: null
         };
 
-// 배너 데이터
-let bannerData = {
-    main: [
-        { id: 1, title: '베팅왕', bonus: '100%', code: 'WIN100', link: '#', image: '', active: true },
-        { id: 2, title: '스포츠토토', bonus: '50만원', code: 'SPORT50', link: '#', image: '', active: true },
-        { id: 3, title: '카지노킹', bonus: '30만원', code: 'KING30', link: '#', image: '', active: true },
-        { id: 4, title: '원엑스벳', bonus: '200%', code: '1XBET200', link: '#', image: '', active: true },
-        { id: 5, title: '피나클', bonus: '무제한', code: 'PINNACLE', link: '#', image: '', active: true },
-        { id: 6, title: '맥스벳', bonus: '80만원', code: 'MAX80', link: '#', image: '', active: true },
-        { id: 7, title: '에볼루션', bonus: '첫충 300%', code: 'EVO300', link: '#', image: '', active: true },
-        { id: 8, title: '프라그마틱', bonus: '매일 보너스', code: 'PRAGMATIC', link: '#', image: '', active: true },
-        { id: 9, title: '아시아게이밍', bonus: '150%', code: 'ASIA150', link: '#', image: '', active: true },
-        { id: 10, title: '마이크로게이밍', bonus: '70만원', code: 'MICRO70', link: '#', image: '', active: true },
-        { id: 11, title: '플레이테크', bonus: '무료 스핀', code: 'PLAYTECH', link: '#', image: '', active: true },
-        { id: 12, title: '넷엔트', bonus: '120%', code: 'NETENT120', link: '#', image: '', active: true }
-    ],
-    sidebar: [
-        { id: 1, title: '프리미어벳', bonus: '신규 300%', code: 'PREMIER300', link: '#', image: '', active: true },
-        { id: 2, title: '슈퍼벳', bonus: '매일 보너스', code: 'SUPER42', link: '#', image: '', active: true }
-    ]
-};
 
+// 배너 데이터 (Strapi에서 가져옴)
+let bannerData = {
+    main: [],
+    sidebar: []
+};
        // 투표 기능
 function vote(postType, postId, voteType) {
     const post = postsData[postType].find(p => p.id === postId);
@@ -8611,8 +8615,8 @@ async function renderUserRanking() {
         updateDisplay();
 
 // 배너 초기화
-        renderBanners();
-        
+                loadBanners();
+
 // 회원 랭킹 렌더링 (Strapi 연동)
 setTimeout(() => {
     renderUserRanking();
@@ -9323,278 +9327,287 @@ function renderAdminPage() {
         return;
     }
     
-    // 통계 계산
-    const totalUsers = usersDB.length;
-    const totalPosts = Object.values(postsData).reduce((sum, posts) => sum + posts.length, 0);
-    const totalComments = Object.values(commentsData).reduce((sum, boardComments) => {
-        return sum + Object.values(boardComments).reduce((boardSum, comments) => boardSum + comments.length, 0);
-    }, 0);
-    const totalPoints = usersDB.reduce((sum, user) => sum + (user.points || 0), 0);
+  // Strapi에서 실제 회원 목록 가져오기
+let realUsers = [];
+try {
+    const token = localStorage.getItem('token');
+    if (token) {
+        const response = await fetch('http://141.164.52.65:1337/api/users?sort=createdAt:desc', {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        const users = await response.json();
+        realUsers = users;
+    }
+} catch (error) {
+    console.error('회원 목록 조회 오류:', error);
+    realUsers = usersDB; // 실패시 로컬 데이터 사용
+}
+
+// 통계 계산
+const totalUsers = realUsers.length;
+const totalPosts = Object.values(postsData).reduce((sum, posts) => sum + posts.length, 0);
+const totalComments = Object.values(commentsData).reduce((sum, boardComments) => {
+    return sum + Object.values(boardComments).reduce((boardSum, comments) => boardSum + comments.length, 0);
+}, 0);
+const totalPoints = realUsers.reduce((sum, user) => sum + (user.points || 0), 0);
+
+container.innerHTML = `
+    <style>
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #404040;
+        }
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #dc2626;
+            margin: 10px 0;
+        }
+        .stat-label {
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+        .admin-section {
+            background: #2d2d2d;
+            border: 1px solid #404040;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .admin-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #404040;
+            color: #e0e0e0;
+        }
+        .user-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .user-table th {
+            background: #1a1a1a;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #404040;
+            color: #e0e0e0;
+        }
+        .user-table td {
+            padding: 10px;
+            border-bottom: 1px solid #404040;
+            color: #e0e0e0;
+        }
+        .user-actions {
+            display: flex;
+            gap: 5px;
+        }
+        .admin-btn {
+            padding: 4px 8px;
+            font-size: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: #dc2626;
+            color: white;
+        }
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+    </style>
     
-    container.innerHTML = `
-        <style>
-            .admin-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 20px;
-                margin-bottom: 30px;
-            }
-            .stat-card {
-                background: #f8f9fa;
-                padding: 20px;
-                border-radius: 12px;
-                text-align: center;
-                border: 1px solid #e9ecef;
-            }
-            .stat-number {
-                font-size: 32px;
-                font-weight: 700;
-                color: #dc2626;
-                margin: 10px 0;
-            }
-            .stat-label {
-                color: #6c757d;
-                font-size: 14px;
-            }
-            .admin-section {
-                background: white;
-                border: 1px solid #e9ecef;
-                border-radius: 12px;
-                padding: 20px;
-                margin-bottom: 20px;
-            }
-            .admin-section-title {
-                font-size: 18px;
-                font-weight: 600;
-                margin-bottom: 15px;
-                padding-bottom: 10px;
-                border-bottom: 2px solid #e9ecef;
-            }
-            .user-table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            .user-table th {
-                background: #f8f9fa;
-                padding: 10px;
-                text-align: left;
-                font-weight: 600;
-                border-bottom: 2px solid #e9ecef;
-            }
-            .user-table td {
-                padding: 10px;
-                border-bottom: 1px solid #f1f3f5;
-            }
-            .user-actions {
-                display: flex;
-                gap: 5px;
-            }
-            .admin-btn {
-                padding: 4px 8px;
-                font-size: 12px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                transition: all 0.2s;
-            }
-            .btn-primary {
-                background: #dc2626;
-                color: white;
-            }
-            .btn-secondary {
-                background: #6c757d;
-                color: white;
-            }
-            .btn-success {
-                background: #28a745;
-                color: white;
-            }
-
-/* 버튼 색상 강제 지정 */
-.btn.btn-secondary {
-    background: #6c757d !important;
-    color: #fff !important;
-    border: 1px solid #6c757d !important;
-}
-
-.btn.btn-secondary:hover {
-    background: #5a6268 !important;
-    border-color: #545b62 !important;
-}
-
-        </style>
-        
-        <!-- 통계 카드 -->
-        <div class="admin-grid">
-            <div class="stat-card">
-                <div class="stat-label">총 회원수</div>
-                <div class="stat-number">${totalUsers}</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">총 게시글</div>
-                <div class="stat-number">${totalPosts}</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">총 댓글</div>
-                <div class="stat-number">${totalComments}</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-label">총 포인트</div>
-                <div class="stat-number">${totalPoints.toLocaleString()}</div>
-            </div>
+    <!-- 통계 카드 -->
+    <div class="admin-grid">
+        <div class="stat-card">
+            <div class="stat-label">총 회원수</div>
+            <div class="stat-number">${totalUsers}</div>
         </div>
-        
-        <!-- 회원 관리 -->
-        <div class="admin-section">
-            <h3 class="admin-section-title">회원 관리</h3>
-            <table class="user-table">
-                <thead>
+        <div class="stat-card">
+            <div class="stat-label">총 게시글</div>
+            <div class="stat-number">${totalPosts}</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">총 댓글</div>
+            <div class="stat-number">${totalComments}</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">총 포인트</div>
+            <div class="stat-number">${totalPoints.toLocaleString()}</div>
+        </div>
+    </div>
+    
+    <!-- 회원 관리 -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">회원 관리</h3>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>닉네임</th>
+                    <th>이메일</th>
+                    <th>포인트</th>
+                    <th>가입일</th>
+                    <th>레벨</th>
+                    <th>상태</th>
+                    <th>관리</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${realUsers.map(user => `
                     <tr>
-                        <th>ID</th>
-                        <th>닉네임</th>
-                        <th>포인트</th>
-                        <th>가입일</th>
-                        <th>레벨</th>
-                        <th>상태</th>
-                        <th>관리</th>
+                        <td>${user.id}</td>
+                        <td>${user.nickname || user.username}</td>
+                        <td>${user.email}</td>
+                        <td>${(user.points || 0).toLocaleString()}P</td>
+                        <td>${new Date(user.createdAt).toLocaleDateString('ko-KR')}</td>
+                        <td>Lv.${user.level || 1}</td>
+                        <td>${user.role?.type === 'admin' ? '<span style="color: #dc2626;">관리자</span>' : 
+                               user.blocked ? '<span style="color: #6c757d;">차단됨</span>' : 
+                               '<span style="color: #28a745;">정상</span>'}</td>
+                        <td>
+                            <div class="user-actions">
+                                <button class="admin-btn btn-primary" onclick="givePoints('${user.nickname || user.username}')">포인트</button>
+                                <button class="admin-btn btn-secondary" onclick="toggleBlock('${user.nickname || user.username}')">${user.blocked ? '차단해제' : '차단'}</button>
+                            </div>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    ${usersDB.map(user => `
+                `).join('')}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- 게시판별 통계 -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">게시판별 통계</h3>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>게시판</th>
+                    <th>게시글 수</th>
+                    <th>총 좋아요</th>
+                    <th>총 싫어요</th>
+                    <th>총 조회수</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${Object.keys(postsData).map(board => {
+                    const posts = postsData[board];
+                    const stats = posts.reduce((acc, post) => ({
+                        likes: acc.likes + (post.likes || 0),
+                        dislikes: acc.dislikes + (post.dislikes || 0),
+                        views: acc.views + (post.views || 0)
+                    }), { likes: 0, dislikes: 0, views: 0 });
+                    
+                    return `
                         <tr>
-                            <td>${user.id}</td>
-                            <td>${getUserDisplay(user.nickname)}</td>
-                            <td>${user.points.toLocaleString()}P</td>
-                            <td>${user.joinDate}</td>
-                            <td>Lv.${user.level || 1}</td>
-                            <td>${user.isAdmin ? '<span style="color: #dc2626;">관리자</span>' : 
-                                   blockedUsers.includes(user.nickname) ? '<span style="color: #6c757d;">차단됨</span>' : 
-                                   '<span style="color: #28a745;">정상</span>'}</td>
-                            <td>
-                                <div class="user-actions">
-                                    <button class="admin-btn btn-primary" onclick="givePoints('${user.nickname}')">포인트</button>
-                                    <button class="admin-btn btn-secondary" onclick="toggleBlock('${user.nickname}')">${blockedUsers.includes(user.nickname) ? '차단해제' : '차단'}</button>
-                                    ${!user.isAdmin ? `<button class="admin-btn btn-success" onclick="toggleAdmin('${user.nickname}')">관리자</button>` : ''}
-                                </div>
-                            </td>
+                            <td>${getBoardName(board)}</td>
+                            <td>${posts.length}</td>
+                            <td>${stats.likes}</td>
+                            <td>${stats.dislikes}</td>
+                            <td>${stats.views}</td>
                         </tr>
-                    `).join('')}
-                </tbody>
-            </table>
-        </div>
+                    `;
+                }).join('')}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 배너 관리 -->
+    <div class="admin-section">
+        <h3 class="admin-section-title">배너 관리</h3>
         
-        <!-- 게시판별 통계 -->
-        <div class="admin-section">
-            <h3 class="admin-section-title">게시판별 통계</h3>
-            <table class="user-table">
-                <thead>
+        <h4 style="margin: 20px 0 10px 0; color: #e0e0e0;">메인 배너</h4>
+        <table class="user-table">
+          <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>사이트명</th>
+                    <th>보너스</th>
+                    <th>코드</th>
+                    <th>링크</th>
+                    <th>이미지 URL</th>
+                    <th>상태</th>
+                    <th>관리</th>
+                </tr>
+            </thead>
+            <tbody>
+              ${bannerData.main.map(banner => `
                     <tr>
-                        <th>게시판</th>
-                        <th>게시글 수</th>
-                        <th>총 좋아요</th>
-                        <th>총 싫어요</th>
-                        <th>총 조회수</th>
+                        <td>${banner.id}</td>
+                        <td><input type="text" value="${banner.title}" id="main-title-${banner.id}" style="width: 100px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.bonus}" id="main-bonus-${banner.id}" style="width: 80px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.code}" id="main-code-${banner.id}" style="width: 80px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.link}" id="main-link-${banner.id}" style="width: 120px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.image || ''}" id="main-image-${banner.id}" style="width: 200px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;" placeholder="이미지 URL 입력"></td>
+                        <td>${banner.active ? '<span style="color: #28a745;">활성</span>' : '<span style="color: #6c757d;">비활성</span>'}</td>
+                       <td>
+    <button class="admin-btn btn-primary" onclick="saveBanner('main', ${banner.id})">저장</button>
+    <button class="admin-btn btn-secondary" onclick="toggleBanner('main', ${banner.id})">${banner.active ? '비활성화' : '활성화'}</button>
+    <button class="admin-btn" style="background: #dc2626; color: white;" onclick="deleteBanner('main', ${banner.id})">삭제</button>
+</td>
                     </tr>
-                </thead>
-                <tbody>
-                    ${Object.keys(postsData).map(board => {
-                        const posts = postsData[board];
-                        const stats = posts.reduce((acc, post) => ({
-                            likes: acc.likes + (post.likes || 0),
-                            dislikes: acc.dislikes + (post.dislikes || 0),
-                            views: acc.views + (post.views || 0)
-                        }), { likes: 0, dislikes: 0, views: 0 });
-                        
-                        return `
-                            <tr>
-                                <td>${getBoardName(board)}</td>
-                                <td>${posts.length}</td>
-                                <td>${stats.likes}</td>
-                                <td>${stats.dislikes}</td>
-                                <td>${stats.views}</td>
-                            </tr>
-                        `;
-                    }).join('')}
-                </tbody>
-            </table>
+                `).join('')}
+            </tbody>
+        </table>
+        
+        <h4 style="margin: 20px 0 10px 0; color: #e0e0e0;">사이드바 배너</h4>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>사이트명</th>
+                    <th>보너스</th>
+                    <th>코드</th>
+                    <th>링크</th>
+                    <th>이미지 URL</th>
+                    <th>상태</th>
+                    <th>관리</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${bannerData.sidebar.map(banner => `
+                    <tr>
+                        <td>${banner.id}</td>
+                        <td><input type="text" value="${banner.title}" id="sidebar-title-${banner.id}" style="width: 100px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.bonus}" id="sidebar-bonus-${banner.id}" style="width: 80px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.code}" id="sidebar-code-${banner.id}" style="width: 80px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.link}" id="sidebar-link-${banner.id}" style="width: 120px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;"></td>
+                        <td><input type="text" value="${banner.image || ''}" id="sidebar-image-${banner.id}" style="width: 200px; background: #1a1a1a; color: #e0e0e0; border: 1px solid #404040;" placeholder="이미지 URL 입력"></td>
+                        <td>${banner.active ? '<span style="color: #28a745;">활성</span>' : '<span style="color: #6c757d;">비활성</span>'}</td>
+                        <td>
+    <button class="admin-btn btn-primary" onclick="saveBanner('sidebar', ${banner.id})">저장</button>
+    <button class="admin-btn btn-secondary" onclick="toggleBanner('sidebar', ${banner.id})">${banner.active ? '비활성화' : '활성화'}</button>
+    <button class="admin-btn" style="background: #dc2626; color: white;" onclick="deleteBanner('sidebar', ${banner.id})">삭제</button>
+</td>
+                    </tr>
+                `).join('')}                
+            </tbody>
+        </table>
+        
+        <div style="margin-top: 20px;">
+            <button class="btn btn-success" onclick="addBanner('main')">메인 배너 추가</button>
+            <button class="btn btn-success" onclick="addBanner('sidebar')">사이드바 배너 추가</button>
         </div>
-
-<!-- 배너 관리 -->
-        <div class="admin-section">
-            <h3 class="admin-section-title">배너 관리</h3>
-            
-            <h4 style="margin: 20px 0 10px 0;">메인 배너</h4>
-            <table class="user-table">
-              <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>사이트명</th>
-                        <th>보너스</th>
-                        <th>코드</th>
-                        <th>링크</th>
-                        <th>이미지 URL</th>
-                        <th>상태</th>
-                        <th>관리</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  ${bannerData.main.map(banner => `
-                        <tr>
-                            <td>${banner.id}</td>
-                            <td><input type="text" value="${banner.title}" id="main-title-${banner.id}" style="width: 100px;"></td>
-                            <td><input type="text" value="${banner.bonus}" id="main-bonus-${banner.id}" style="width: 80px;"></td>
-                            <td><input type="text" value="${banner.code}" id="main-code-${banner.id}" style="width: 80px;"></td>
-                            <td><input type="text" value="${banner.link}" id="main-link-${banner.id}" style="width: 120px;"></td>
-                            <td><input type="text" value="${banner.image || ''}" id="main-image-${banner.id}" style="width: 200px;" placeholder="이미지 URL 입력"></td>
-                            <td>${banner.active ? '<span style="color: #28a745;">활성</span>' : '<span style="color: #6c757d;">비활성</span>'}</td>
-                            <td>
-                                <button class="admin-btn btn-primary" onclick="saveBanner('main', ${banner.id})">저장</button>
-                                <button class="admin-btn btn-secondary" onclick="toggleBanner('main', ${banner.id})">${banner.active ? '비활성화' : '활성화'}</button>
-                            </td>
-                        </tr>
-                    `).join('')}
-                </tbody>
-            </table>
-            
-            <h4 style="margin: 20px 0 10px 0;">사이드바 배너</h4>
-            <table class="user-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>사이트명</th>
-                        <th>보너스</th>
-                        <th>코드</th>
-                        <th>링크</th>
-                        <th>이미지 URL</th>
-                        <th>상태</th>
-                        <th>관리</th>
-                    </tr>
-                </thead>
-                <tbody>
-${bannerData.sidebar.map(banner => `
-                        <tr>
-                            <td>${banner.id}</td>
-                            <td><input type="text" value="${banner.title}" id="sidebar-title-${banner.id}" style="width: 100px;"></td>
-                            <td><input type="text" value="${banner.bonus}" id="sidebar-bonus-${banner.id}" style="width: 80px;"></td>
-                            <td><input type="text" value="${banner.code}" id="sidebar-code-${banner.id}" style="width: 80px;"></td>
-                            <td><input type="text" value="${banner.link}" id="sidebar-link-${banner.id}" style="width: 120px;"></td>
-                            <td><input type="text" value="${banner.image || ''}" id="sidebar-image-${banner.id}" style="width: 200px;" placeholder="이미지 URL 입력"></td>
-                            <td>${banner.active ? '<span style="color: #28a745;">활성</span>' : '<span style="color: #6c757d;">비활성</span>'}</td>
-                            <td>
-                                <button class="admin-btn btn-primary" onclick="saveBanner('sidebar', ${banner.id})">저장</button>
-                                <button class="admin-btn btn-secondary" onclick="toggleBanner('sidebar', ${banner.id})">${banner.active ? '비활성화' : '활성화'}</button>
-                            </td>
-                        </tr>
-                    `).join('')}                </tbody>
-            </table>
-            
-            <div style="margin-top: 20px;">
-                <button class="btn btn-success" onclick="addBanner('main')">메인 배너 추가</button>
-                <button class="btn btn-success" onclick="addBanner('sidebar')">사이드바 배너 추가</button>
-            </div>
-        </div>
-
-    `;
+    </div>
+`;
 }
 
 // 포인트 지급 함수
@@ -9640,48 +9653,228 @@ function toggleAdmin(nickname) {
     }
 }
 
-// 배너 저장 함수
-function saveBanner(type, id) {
+async function loadBanners() {
+    try {
+        const response = await fetch('http://141.164.52.65:1337/api/banners?populate=*&sort=order:asc');
+        if (response.ok) {
+            const data = await response.json();
+            
+            // 데이터 초기화
+            bannerData.main = [];
+            bannerData.sidebar = [];
+            
+            // Strapi 데이터를 기존 형식으로 변환
+            data.data.forEach(banner => {
+                const bannerObj = {
+                    id: banner.id,
+                    title: banner.title,
+                    bonus: banner.bonus || '',
+                    code: banner.code || '',
+                    link: banner.link || '#',
+                    image: banner.imageUrl || (banner.image ? `http://141.164.52.65:1337${banner.image.url}` : ''),
+                    active: banner.active
+                };
+                
+                if (banner.position === 'main') {
+                    bannerData.main.push(bannerObj);
+                } else if (banner.position === 'sidebar') {
+                    bannerData.sidebar.push(bannerObj);
+                }
+            });
+            
+            renderBanners();
+            console.log('✅ 배너 데이터 로드 성공');
+        }
+    } catch (error) {
+        console.error('배너 로드 오류:', error);
+        // 로드 실패시 기본 배너 설정
+        setDefaultBanners();
+    }
+}
+
+// 기본 배너 설정 (Strapi 연결 실패시)
+function setDefaultBanners() {
+    bannerData = {
+        main: [
+            { id: 1, title: '베팅왕', bonus: '100%', code: 'WIN100', link: '#', image: '', active: true },
+            { id: 2, title: '스포츠토토', bonus: '50만원', code: 'SPORT50', link: '#', image: '', active: true }
+        ],
+        sidebar: [
+            { id: 1, title: '프리미어벳', bonus: '신규 300%', code: 'PREMIER300', link: '#', image: '', active: true }
+        ]
+    };
+}
+
+// 배너 저장 함수 (Strapi 연동)
+async function saveBanner(type, id) {
     const banner = bannerData[type].find(b => b.id === id);
     if (!banner) return;
     
-    banner.title = document.getElementById(`${type}-title-${id}`).value;
-    banner.bonus = document.getElementById(`${type}-bonus-${id}`).value;
-    banner.code = document.getElementById(`${type}-code-${id}`).value;
-    banner.link = document.getElementById(`${type}-link-${id}`).value;
-    banner.image = document.getElementById(`${type}-image-${id}`).value;
-    
-    renderBanners();
-    alert('배너가 저장되었습니다.');
-}
-
-// 배너 활성/비활성 토글
-function toggleBanner(type, id) {
-    const banner = bannerData[type].find(b => b.id === id);
-    if (!banner) return;
-    
-    banner.active = !banner.active;
-    renderBanners();
-    renderAdminPage();
-}
-
-// 배너 추가
-function addBanner(type) {
-    const newId = Math.max(...bannerData[type].map(b => b.id)) + 1;
-    const newBanner = {
-        id: newId,
-        title: '새 배너',
-        bonus: '보너스',
-        code: 'CODE',
-        link: '#',
-        image: '',
-        active: true
+    const newData = {
+        title: document.getElementById(`${type}-title-${id}`).value,
+        bonus: document.getElementById(`${type}-bonus-${id}`).value,
+        code: document.getElementById(`${type}-code-${id}`).value,
+        link: document.getElementById(`${type}-link-${id}`).value,
+        imageUrl: document.getElementById(`${type}-image-${id}`).value,
+        position: type,
+        active: banner.active
     };
     
-    bannerData[type].push(newBanner);
-    renderBanners();
-    renderAdminPage();
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            return;
+        }
+        
+        const response = await fetch(`http://141.164.52.65:1337/api/banners/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ data: newData })
+        });
+        
+        if (response.ok) {
+            // 로컬 데이터도 업데이트
+            Object.assign(banner, newData);
+            banner.image = newData.imageUrl;
+            
+            renderBanners();
+            alert('배너가 저장되었습니다.');
+        } else {
+            alert('저장에 실패했습니다.');
+        }
+    } catch (error) {
+        console.error('배너 저장 오류:', error);
+        alert('저장 중 오류가 발생했습니다.');
+    }
 }
+
+// 배너 활성/비활성 토글 (Strapi 연동)
+async function toggleBanner(type, id) {
+    const banner = bannerData[type].find(b => b.id === id);
+    if (!banner) return;
+    
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            return;
+        }
+        
+        const response = await fetch(`http://141.164.52.65:1337/api/banners/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ 
+                data: { active: !banner.active } 
+            })
+        });
+        
+        if (response.ok) {
+            banner.active = !banner.active;
+            renderBanners();
+            renderAdminPage();
+            alert(`배너가 ${banner.active ? '활성화' : '비활성화'}되었습니다.`);
+        } else {
+            alert('변경에 실패했습니다.');
+        }
+    } catch (error) {
+        console.error('배너 토글 오류:', error);
+        alert('변경 중 오류가 발생했습니다.');
+    }
+}
+
+// 배너 추가 (Strapi 연동)
+async function addBanner(type) {
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            return;
+        }
+        
+        const newBannerData = {
+            title: '새 배너',
+            bonus: '보너스',
+            code: 'CODE',
+            link: '#',
+            imageUrl: '',
+            position: type,
+            active: true,
+            order: bannerData[type].length
+        };
+        
+        const response = await fetch('http://141.164.52.65:1337/api/banners', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ data: newBannerData })
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            
+            // 로컬 데이터에 추가
+            const newBanner = {
+                id: result.data.id,
+                ...newBannerData,
+                image: newBannerData.imageUrl
+            };
+            
+            bannerData[type].push(newBanner);
+            renderBanners();
+            renderAdminPage();
+            alert('새 배너가 추가되었습니다.');
+        } else {
+            alert('배너 추가에 실패했습니다.');
+        }
+    } catch (error) {
+        console.error('배너 추가 오류:', error);
+        alert('추가 중 오류가 발생했습니다.');
+    }
+}
+
+// 배너 삭제 함수 추가
+async function deleteBanner(type, id) {
+    if (!confirm('정말로 이 배너를 삭제하시겠습니까?')) return;
+    
+    try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            return;
+        }
+        
+        const response = await fetch(`http://141.164.52.65:1337/api/banners/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+        
+        if (response.ok) {
+            // 로컬 데이터에서 제거
+            bannerData[type] = bannerData[type].filter(b => b.id !== id);
+            renderBanners();
+            renderAdminPage();
+            alert('배너가 삭제되었습니다.');
+        } else {
+            alert('삭제에 실패했습니다.');
+        }
+    } catch (error) {
+        console.error('배너 삭제 오류:', error);
+        alert('삭제 중 오류가 발생했습니다.');
+    }
+}
+    
+ 
 
 
 // 마이페이지 렌더링
@@ -10140,7 +10333,7 @@ function displaySearchResults(results, searchTerm) {
         html += `
             <div class="search-result-item" onclick="goToPost('${result.boardType}', ${result.id})">
                 <div class="search-result-header">
-                    <div class="search-result-title">${highlightedTitle}</div>
+                    <div class="search-result-title" style="color: #e0e0e0;">${highlightedTitle}</div>
                     <div class="search-result-board">${result.boardName}</div>
                 </div>
                 <div class="search-result-content">${highlightedContent}</div>
@@ -10292,22 +10485,22 @@ function closeSearchModal() {
 
 <!-- 검색 모달 -->
 <div id="searchModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;">
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; width: 800px; max-width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
-        <h2 style="margin-bottom: 20px; color: #212529;">통합 검색</h2>
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2d2d2d; padding: 30px; border-radius: 12px; width: 800px; max-width: 90%; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+        <h2 style="margin-bottom: 20px; color: #e0e0e0;">통합 검색</h2>
         
         <div style="margin-bottom: 20px;">
-            <input type="text" id="searchInput" placeholder="검색어를 입력하세요" style="width: 100%; padding: 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 16px;">
+            <input type="text" id="searchInput" placeholder="검색어를 입력하세요" style="width: 100%; padding: 12px; border: 1px solid #404040; border-radius: 6px; font-size: 16px; background: #1a1a1a; color: #e0e0e0;">
         </div>
         
         <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-            <select id="searchType" style="padding: 8px 12px; border: 1px solid #dee2e6; border-radius: 6px;">
+            <select id="searchType" style="padding: 8px 12px; border: 1px solid #404040; border-radius: 6px; background: #1a1a1a; color: #e0e0e0;">
                 <option value="all">전체</option>
                 <option value="title">제목</option>
                 <option value="content">내용</option>
                 <option value="author">작성자</option>
             </select>
             
-            <select id="searchBoard" style="padding: 8px 12px; border: 1px solid #dee2e6; border-radius: 6px;">
+           <select id="searchBoard" style="padding: 8px 12px; border: 1px solid #404040; border-radius: 6px; background: #1a1a1a; color: #e0e0e0;">
                 <option value="all">모든 게시판</option>
                 <option value="verify">먹튀검증</option>
                 <option value="onca">온카후기</option>
@@ -10317,7 +10510,7 @@ function closeSearchModal() {
             </select>
             
             <button onclick="performSearch()" style="padding: 8px 20px; background: #dc2626; color: white; border: none; border-radius: 6px; cursor: pointer;">검색</button>
-            <button onclick="closeSearchModal()" style="padding: 8px 20px; background: #e9ecef; color: #495057; border: none; border-radius: 6px; cursor: pointer;">닫기</button>
+           <button onclick="closeSearchModal()" style="padding: 8px 20px; background: #6c757d; color: white; border: none; border-radius: 6px; cursor: pointer;">닫기</button>
         </div>
         
         <div id="searchResults" style="margin-top: 20px;">
