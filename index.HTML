@@ -5323,9 +5323,9 @@ async function doAttendance() {
             totalReward += 2000;
         }
         
-   const attendanceData = {
+ const attendanceData = {
     data: {
-        user: strapiUser.id,
+        users_permissions_user: { id: strapiUser.id },  // ✅ 올바른 형식
         streak: newStreak,
         points: totalReward,
         date: new Date().toISOString()
