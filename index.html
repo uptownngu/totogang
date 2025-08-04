@@ -2,9 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * data: blob:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Dragons - 믿을 수 있는 먹튀검증 커뮤니티</title>
+    <title>토토깡 - 믿을 수 있는 먹튀검증 커뮤니티</title>
        <style>
         * {
             margin: 0;
@@ -94,6 +94,26 @@ div[style*="background: #fff"] {
 
 span[style*="color: #6c757d"] {
     color: #e0e0e0;
+}
+
+/* 네비게이션 메뉴 강제 다크모드 적용 */
+.nav-menu-horizontal a,
+.nav-menu-horizontal .dropdown > a {
+    color: #e0e0e0 !important;
+}
+
+.nav-menu-horizontal .dropdown-menu {
+    background: #2d2d2d !important;
+    border: 1px solid #404040 !important;
+}
+
+.nav-menu-horizontal .dropdown-menu a {
+    color: #b0b0b0 !important;
+}
+
+.nav-menu-horizontal .dropdown-menu a:hover {
+    background: #3a3a3a !important;
+    color: #ad3a23 !important;
 }
 
 /* 순위 번호들 강제 수정 */
@@ -909,13 +929,13 @@ img {
         }
 
         .board-table th {
-            background: #f8f9fa;
+            background: #2d2d2d;
             padding: 12px;
             text-align: left;
             font-size: 13px;
             font-weight: 600;
-            color: #495057;
-            border-bottom: 2px solid #e9ecef;
+            color: #ffffff;
+            border-bottom: 2px solid #404040;
         }
 
       .board-table td {
@@ -960,13 +980,16 @@ img {
 
         /* Banner Styles */
         .banner-section {
-            margin: 24px 0;
+            margin: 0;
+            padding: 0;
         }
 
         .banner-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 0;
+            margin: 0;
+            padding: 0;
         }
 
     .welcome-banner {
@@ -1097,18 +1120,47 @@ img {
         .bottom-banner-section {
             display: block !important;
             visibility: visible !important;
-            margin-top: 40px;
+            margin: 0;
+            padding: 0;
             min-height: 120px;
         }
 
         .bottom-banner-section .banner-grid {
             display: grid !important;
             visibility: visible !important;
+            gap: 0;
+            margin: 0;
+            padding: 0;
         }
 
         .bottom-banner-section .banner-ad {
             display: block !important;
             visibility: visible !important;
+        }
+
+        /* 배너 강제 표시 (CSP 정책 대응) */
+        .banner-ad {
+            display: block !important;
+            visibility: visible !important;
+            min-height: 90px !important;
+        }
+
+        .banner-ad img {
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        /* 배너 이미지 로딩 실패 시 대체 스타일 */
+        .banner-fallback {
+            background: #3a3a3a !important;
+            border: 1px solid #555 !important;
+            border-radius: 8px !important;
+            padding: 20px !important;
+            text-align: center !important;
+            min-height: 90px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
 
 /* Vote Buttons */
@@ -3202,18 +3254,37 @@ small {
     /* 테이블 반응형 */
     .board-table {
         font-size: 11px; /* 테이블 폰트 크기 줄임 */
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
     }
     
     .board-table th,
     .board-table td {
-        padding: 8px 4px; /* 패딩 줄임 */
+        padding: 6px 3px; /* 패딩 더 줄임 */
         white-space: nowrap; /* 텍스트 줄바꿈 방지 */
         overflow: hidden;
         text-overflow: ellipsis;
+        min-width: 60px; /* 최소 너비 설정 */
     }
     
     .board-table .title {
-        max-width: 150px; /* 제목 최대 너비 설정 */
+        max-width: 120px; /* 제목 최대 너비 더 줄임 */
+    }
+    
+    /* 테이블 스크롤바 스타일 */
+    .board-table::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .board-table::-webkit-scrollbar-track {
+        background: #1a1a1a;
+    }
+    
+    .board-table::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 2px;
     }
     
     /* 뱃지 크기 조정 */
@@ -3433,19 +3504,73 @@ small {
 /* 더 작은 화면 (360px 이하) */
 @media (max-width: 360px) {
     body {
-        font-size: 11px;
+        font-size: 10px;
     }
+    
+    /* 헤더 더 작게 */
+    .header-main {
+        padding: 5px 0;
+        gap: 3px;
+    }
+    
+    .logo-image {
+        height: 30px !important;
+    }
+    
+    .header-search {
+        max-width: 100px;
+        margin: 0 3px;
+    }
+    
+    .search-box input {
+        font-size: 10px;
+    }
+    
+    /* 메인 콘텐츠 패딩 줄임 */
+    .main-wrapper {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    /* 테이블 더 작게 */
+    .board-table {
+        font-size: 9px;
+    }
+    
+    .board-table th,
+    .board-table td {
+        padding: 4px 2px;
+        min-width: 50px;
+    }
+    
+    .board-table .title {
+        max-width: 80px;
+    }
+    
+    /* 버튼 더 작게 */
+    .btn,
+    .vote-btn,
+    .btn-write {
+        font-size: 9px;
+        padding: 3px 6px;
+    }
+    
+    /* 섹션 타이틀 */
+    .section-title {
+        font-size: 14px;
+    }
+    
     /* 작은 화면 바카라 조정 */
     .bet-option {
-        padding: 5px 2px;
+        padding: 3px 1px;
     }
 
     .bet-title {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .bet-payout {
-        font-size: 9px;
+        font-size: 8px;
     }
 
     .betting-area {
@@ -3523,6 +3648,23 @@ small {
     /* 자유게시판 - 카테고리 숨기기 */
     #freeboard .board-table th:nth-child(2),
     #freeboard .board-table td:nth-child(2) {
+        display: none;
+    }
+    
+    /* 꽁머니홍보 - 꽁머니 컬럼 숨기기 */
+    #free-money .board-table th:nth-child(3),
+    #free-money .board-table td:nth-child(3) {
+        display: none;
+    }
+}
+
+/* 더 작은 화면에서 추가 컬럼 숨기기 */
+@media (max-width: 480px) {
+    /* 모든 게시판에서 날짜, 조회수 숨기기 */
+    .board-table th:nth-child(4),
+    .board-table td:nth-child(4),
+    .board-table th:nth-child(5),
+    .board-table td:nth-child(5) {
         display: none;
     }
 }
@@ -3661,43 +3803,43 @@ small {
     /* 배너 그리드 유지하되 크기 조정 */
     .banner-grid {
         grid-template-columns: 1fr; /* 한 줄에 하나씩 */
-        gap: 10px;
+        gap: 8px;
     }
     
     .banner-ad {
-        padding: 12px;
-        min-height: 80px;
+        padding: 8px;
+        min-height: 60px;
     }
     
     .banner-title {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .banner-bonus {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .banner-code {
-        font-size: 0.7rem;
-        padding: 2px 6px;
+        font-size: 0.6rem;
+        padding: 1px 4px;
     }
     
     /* 웰컴 배너도 유지하되 크기 조정 */
     .welcome-banner {
-        padding: 20px 10px;
-        margin: -10px -5px 15px;
+        padding: 15px 8px;
+        margin: -8px -4px 12px;
     }
     
     .welcome-title {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     
     .welcome-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .welcome-description {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         display: none; /* 설명은 숨김 */
     }
 }
@@ -5022,7 +5164,7 @@ small {
     </div>
 </div>
             
- <div class="bottom-banner-section" id="bottomBannerSection" style="margin-top: 40px; min-height: 120px; display: block;">
+ <div class="bottom-banner-section" id="bottomBannerSection" style="margin: 0; padding: 0; min-height: 120px; display: block;">
                 <div class="section-title">
                     <span>💎</span> 프리미엄 파트너
                 </div>
