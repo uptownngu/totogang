@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; img-src * data: blob:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>토토깡 - 믿을 수 있는 먹튀검증 커뮤니티</title>
        <style>
@@ -94,26 +94,6 @@ div[style*="background: #fff"] {
 
 span[style*="color: #6c757d"] {
     color: #e0e0e0;
-}
-
-/* 네비게이션 메뉴 강제 다크모드 적용 */
-.nav-menu-horizontal a,
-.nav-menu-horizontal .dropdown > a {
-    color: #e0e0e0 !important;
-}
-
-.nav-menu-horizontal .dropdown-menu {
-    background: #2d2d2d !important;
-    border: 1px solid #404040 !important;
-}
-
-.nav-menu-horizontal .dropdown-menu a {
-    color: #b0b0b0 !important;
-}
-
-.nav-menu-horizontal .dropdown-menu a:hover {
-    background: #3a3a3a !important;
-    color: #ad3a23 !important;
 }
 
 /* 순위 번호들 강제 수정 */
@@ -1063,27 +1043,27 @@ img {
             }
         }
 
-    .banner-ad {
-    background: transparent !important;  /* 배경 제거 */
-    border: none !important;  /* 테두리 제거 */
-    border-radius: 8px;
-    padding: 0 !important;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    min-height: 90px !important;  /* 최소 높이 설정 */
-    display: block !important;  /* flex 대신 block */
-    height: auto !important;
-}
+        .banner-ad {
+        background: transparent !important;  /* 배경 제거 */
+        border: none !important;  /* 테두리 제거 */
+        border-radius: 8px;
+        padding: 0 !important;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        min-height: 90px !important;  /* 최소 높이 설정 */
+        display: block !important;  /* flex 대신 block */
+        height: auto !important;
+    }
 
 .banner-ad img {
     width: 100%;
     height: auto;
     min-height: 90px;
-    object-fit: contain !important; /* cover 대신 contain 사용 */
+    object-fit: contain !important; /* cover에서 contain으로 복원 */
     display: block !important;
 }
 
@@ -1136,31 +1116,6 @@ img {
         .bottom-banner-section .banner-ad {
             display: block !important;
             visibility: visible !important;
-        }
-
-        /* 배너 강제 표시 (CSP 정책 대응) */
-        .banner-ad {
-            display: block !important;
-            visibility: visible !important;
-            min-height: 90px !important;
-        }
-
-        .banner-ad img {
-            display: block !important;
-            visibility: visible !important;
-        }
-
-        /* 배너 이미지 로딩 실패 시 대체 스타일 */
-        .banner-fallback {
-            background: #3a3a3a !important;
-            border: 1px solid #555 !important;
-            border-radius: 8px !important;
-            padding: 20px !important;
-            text-align: center !important;
-            min-height: 90px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
         }
 
 /* Vote Buttons */
@@ -10077,7 +10032,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
             }
         ],
         board: boardId,
-	// users_permissions_user: userData.id, //
+	users_permissions_user: userData.id,
         attachments: uploadedFileIds.length > 0 ? uploadedFileIds : [],
         likes: 0,            
         dislikes: 0 
