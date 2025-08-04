@@ -8255,7 +8255,7 @@ createNotification(NOTIFICATION_TYPES.POINT, {
             const commentData = {
                 data: {
                     content: content,
-                    user: userData.id,
+                    users_permissions_user: userData.id,
                     post: parseInt(postId) || postId,
                     parent: parentId ? parseInt(parentId) : null 
                 }
@@ -10071,7 +10071,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
             }
         ],
         board: boardId,
-	user: userData.id,  // users_permissions_user 대신 user 시도
+	        users_permissions_user: userData.id,  // Strapi에서 올바른 필드명
         attachments: uploadedFileIds.length > 0 ? uploadedFileIds : [],
         likes: 0,            
         dislikes: 0 
