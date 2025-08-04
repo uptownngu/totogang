@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+    <!-- CSP 제거 - 개발 환경에서만 사용 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>토토깡 - 믿을 수 있는 먹튀검증 커뮤니티</title>
        <style>
@@ -182,7 +182,9 @@ span[style*="color: #d97706"] {
 }
 
 .post-view-title {
-    color: #e0e0e0;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .post-view-content {
@@ -1305,12 +1307,12 @@ small {
         }
 
         .btn-secondary {
-            background: #e9ecef;
-            color: #495057;
+            background: #404040;
+            color: #e0e0e0;
         }
 
         .btn-secondary:hover {
-            background: #dee2e6;
+            background: #555555;
         }
 
         .btn-write {
@@ -1770,9 +1772,9 @@ small {
 .comments-section {
     margin-top: 30px;
     padding: 20px;
-    background: #f8f9fa;
+    background: #3a3a3a;
     border-radius: 8px;
-    border: 1px solid #e9ecef;
+    border: 1px solid #404040;
 }
 
 .comments-header {
@@ -1781,20 +1783,20 @@ small {
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #e9ecef;
+    border-bottom: 2px solid #404040;
 }
 
 .comments-title {
     font-size: 18px;
     font-weight: 600;
-    color: #212529;
+    color: #ffffff;
 }
 
 .comment-write-box {
-    background: white;
+    background: #2d2d2d;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #404040;
     margin-bottom: 20px;
 }
 
@@ -1802,11 +1804,13 @@ small {
     width: 100%;
     min-height: 80px;
     padding: 10px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #404040;
     border-radius: 6px;
     resize: vertical;
     font-size: 14px;
     font-family: inherit;
+    background: #1a1a1a;
+    color: #e0e0e0;
 }
 
 .comment-submit-btn {
@@ -1823,10 +1827,10 @@ small {
 
 .comment-item {
     padding: 15px;
-    background: white;
+    background: #2d2d2d;
     border-radius: 8px;
     margin-bottom: 10px;
-    border: 1px solid #e9ecef;
+    border: 1px solid #404040;
 }
 
 .comment-item.deleted {
@@ -1842,12 +1846,12 @@ small {
 
 .comment-author {
     font-weight: 600;
-    color: #212529;
+    color: #e0e0e0;
 }
 
 .comment-date {
     font-size: 12px;
-    color: #6c757d;
+    color: #b0b0b0;
 }
 
 .comment-delete-btn {
@@ -1862,7 +1866,7 @@ small {
 }
 
 .comment-content {
-    color: #495057;
+    color: #b0b0b0;
     line-height: 1.6;
     margin-bottom: 10px;
 }
@@ -1875,41 +1879,42 @@ small {
 
 .comment-vote-btn {
     padding: 4px 12px;
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background: #3a3a3a;
+    border: 1px solid #404040;
     border-radius: 20px;
     cursor: pointer;
     font-size: 13px;
     transition: all 0.2s;
+    color: #e0e0e0;
 }
 
 .comment-vote-btn.active {
-    background: #e3f2fd;
-    border-color: #2196f3;
-    color: #1976d2;
+    background: #2d5a2d;
+    border-color: #16a34a;
+    color: #16a34a;
 }
 
 .comment-reply-btn {
     padding: 4px 12px;
     background: transparent;
-    border: 1px solid #dee2e6;
+    border: 1px solid #404040;
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
-    color: #495057;
+    color: #b0b0b0;
 }
 
 .comment-replies {
     margin-left: 40px;
     margin-top: 10px;
     padding-left: 20px;
-    border-left: 2px solid #e9ecef;
+    border-left: 2px solid #404040;
 }
 
 .reply-form {
     margin-top: 10px;
     padding: 10px;
-    background: #f8f9fa;
+    background: #2d2d2d;
     border-radius: 6px;
 }
 
@@ -1917,16 +1922,18 @@ small {
     width: 100%;
     min-height: 60px;
     padding: 8px;
-    border: 1px solid #dee2e6;
+    border: 1px solid #404040;
     border-radius: 4px;
     font-size: 13px;
     margin-bottom: 8px;
+    background: #1a1a1a;
+    color: #e0e0e0;
 }
 
 .comments-empty {
     text-align: center;
     padding: 40px;
-    color: #6c757d;
+    color: #b0b0b0;
 }
 
 /* 게시글 상세보기 페이지 스타일 */
@@ -1936,7 +1943,7 @@ small {
 }
 
 .post-view-header {
-    border-bottom: 2px solid #e9ecef;
+    border-bottom: 2px solid #404040;
     padding-bottom: 20px;
     margin-bottom: 30px;
 }
@@ -1944,33 +1951,34 @@ small {
 .post-view-title {
     font-size: 28px;
     font-weight: 700;
-    color: #212529;
+    color: #ffffff;
     margin: 20px 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .post-view-info {
     display: flex;
     gap: 20px;
-    color: #6c757d;
+    color: #b0b0b0;
     font-size: 14px;
 }
 
 .post-view-info strong {
-    color: #495057;
+    color: #e0e0e0;
 }
 
 .post-view-content {
     font-size: 16px;
     line-height: 1.8;
-    color: #495057;
+    color: #b0b0b0;
     min-height: 300px;
     padding: 30px 0;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid #404040;
 }
 
 .post-view-actions {
     padding: 20px 0;
-    border-bottom: 2px solid #e9ecef;
+    border-bottom: 2px solid #404040;
 }
 
 /* 반응형 */
@@ -10063,7 +10071,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
             }
         ],
         board: boardId,
-	users_permissions_user: userData.id,
+	user: userData.id,  // users_permissions_user 대신 user 시도
         attachments: uploadedFileIds.length > 0 ? uploadedFileIds : [],
         likes: 0,            
         dislikes: 0 
@@ -11351,8 +11359,8 @@ function renderAdminPage() {
                 color: white;
             }
             .btn-secondary {
-                background: #6c757d;
-                color: white;
+                background: #404040;
+                color: #e0e0e0;
             }
             .btn-success {
                 background: #28a745;
@@ -11361,14 +11369,14 @@ function renderAdminPage() {
 
 /* 버튼 색상 강제 지정 */
 .btn.btn-secondary {
-    background: #6c757d !important;
-    color: #fff !important;
-    border: 1px solid #6c757d !important;
+    background: #404040 !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #404040 !important;
 }
 
 .btn.btn-secondary:hover {
-    background: #5a6268 !important;
-    border-color: #545b62 !important;
+    background: #555555 !important;
+    border-color: #555555 !important;
 }
 
         </style>
