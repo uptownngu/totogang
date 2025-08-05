@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <!-- CSP 제거 - 개발 환경에서만 사용 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>토토깡 - 믿을 수 있는 먹튀검증 커뮤니티</title>
        <style>
@@ -182,9 +182,7 @@ span[style*="color: #d97706"] {
 }
 
 .post-view-title {
-    color: #ffffff;
-    font-weight: 600;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
 }
 
 .post-view-content {
@@ -907,7 +905,7 @@ img {
             width: 100%;
             border-collapse: collapse;
             margin-top: 16px;
-	      table-layout: fixed;
+            table-layout: auto; /* 모바일에서 더 유연하게 */
         }
 
         .board-table th {
@@ -1307,12 +1305,12 @@ small {
         }
 
         .btn-secondary {
-            background: #404040;
-            color: #e0e0e0;
+            background: #e9ecef;
+            color: #495057;
         }
 
         .btn-secondary:hover {
-            background: #555555;
+            background: #dee2e6;
         }
 
         .btn-write {
@@ -1772,9 +1770,9 @@ small {
 .comments-section {
     margin-top: 30px;
     padding: 20px;
-    background: #3a3a3a;
+    background: #f8f9fa;
     border-radius: 8px;
-    border: 1px solid #404040;
+    border: 1px solid #e9ecef;
 }
 
 .comments-header {
@@ -1783,20 +1781,20 @@ small {
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #404040;
+    border-bottom: 2px solid #e9ecef;
 }
 
 .comments-title {
     font-size: 18px;
     font-weight: 600;
-    color: #ffffff;
+    color: #212529;
 }
 
 .comment-write-box {
-    background: #2d2d2d;
+    background: white;
     padding: 15px;
     border-radius: 8px;
-    border: 1px solid #404040;
+    border: 1px solid #dee2e6;
     margin-bottom: 20px;
 }
 
@@ -1804,13 +1802,11 @@ small {
     width: 100%;
     min-height: 80px;
     padding: 10px;
-    border: 1px solid #404040;
+    border: 1px solid #dee2e6;
     border-radius: 6px;
     resize: vertical;
     font-size: 14px;
     font-family: inherit;
-    background: #1a1a1a;
-    color: #e0e0e0;
 }
 
 .comment-submit-btn {
@@ -1827,10 +1823,10 @@ small {
 
 .comment-item {
     padding: 15px;
-    background: #2d2d2d;
+    background: white;
     border-radius: 8px;
     margin-bottom: 10px;
-    border: 1px solid #404040;
+    border: 1px solid #e9ecef;
 }
 
 .comment-item.deleted {
@@ -1846,12 +1842,12 @@ small {
 
 .comment-author {
     font-weight: 600;
-    color: #e0e0e0;
+    color: #212529;
 }
 
 .comment-date {
     font-size: 12px;
-    color: #b0b0b0;
+    color: #6c757d;
 }
 
 .comment-delete-btn {
@@ -1866,7 +1862,7 @@ small {
 }
 
 .comment-content {
-    color: #b0b0b0;
+    color: #495057;
     line-height: 1.6;
     margin-bottom: 10px;
 }
@@ -1879,42 +1875,41 @@ small {
 
 .comment-vote-btn {
     padding: 4px 12px;
-    background: #3a3a3a;
-    border: 1px solid #404040;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
     border-radius: 20px;
     cursor: pointer;
     font-size: 13px;
     transition: all 0.2s;
-    color: #e0e0e0;
 }
 
 .comment-vote-btn.active {
-    background: #2d5a2d;
-    border-color: #16a34a;
-    color: #16a34a;
+    background: #e3f2fd;
+    border-color: #2196f3;
+    color: #1976d2;
 }
 
 .comment-reply-btn {
     padding: 4px 12px;
     background: transparent;
-    border: 1px solid #404040;
+    border: 1px solid #dee2e6;
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
-    color: #b0b0b0;
+    color: #495057;
 }
 
 .comment-replies {
     margin-left: 40px;
     margin-top: 10px;
     padding-left: 20px;
-    border-left: 2px solid #404040;
+    border-left: 2px solid #e9ecef;
 }
 
 .reply-form {
     margin-top: 10px;
     padding: 10px;
-    background: #2d2d2d;
+    background: #f8f9fa;
     border-radius: 6px;
 }
 
@@ -1922,18 +1917,16 @@ small {
     width: 100%;
     min-height: 60px;
     padding: 8px;
-    border: 1px solid #404040;
+    border: 1px solid #dee2e6;
     border-radius: 4px;
     font-size: 13px;
     margin-bottom: 8px;
-    background: #1a1a1a;
-    color: #e0e0e0;
 }
 
 .comments-empty {
     text-align: center;
     padding: 40px;
-    color: #b0b0b0;
+    color: #6c757d;
 }
 
 /* 게시글 상세보기 페이지 스타일 */
@@ -1943,7 +1936,7 @@ small {
 }
 
 .post-view-header {
-    border-bottom: 2px solid #404040;
+    border-bottom: 2px solid #e9ecef;
     padding-bottom: 20px;
     margin-bottom: 30px;
 }
@@ -1951,34 +1944,33 @@ small {
 .post-view-title {
     font-size: 28px;
     font-weight: 700;
-    color: #ffffff;
+    color: #212529;
     margin: 20px 0;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .post-view-info {
     display: flex;
     gap: 20px;
-    color: #b0b0b0;
+    color: #6c757d;
     font-size: 14px;
 }
 
 .post-view-info strong {
-    color: #e0e0e0;
+    color: #495057;
 }
 
 .post-view-content {
     font-size: 16px;
     line-height: 1.8;
-    color: #b0b0b0;
+    color: #495057;
     min-height: 300px;
     padding: 30px 0;
-    border-bottom: 1px solid #404040;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .post-view-actions {
     padding: 20px 0;
-    border-bottom: 2px solid #404040;
+    border-bottom: 2px solid #e9ecef;
 }
 
 /* 반응형 */
@@ -2067,31 +2059,6 @@ small {
     gap: 10px;
     margin-bottom: 20px;
     border-bottom: 2px solid #e9ecef;
-    flex-wrap: wrap;
-}
-
-/* 모바일에서 탭 가로 정렬 */
-@media (max-width: 768px) {
-    .mypage-tabs {
-        gap: 5px;
-        justify-content: center;
-    }
-    
-    .mypage-tab {
-        padding: 8px 12px;
-        font-size: 14px;
-        white-space: nowrap;
-        flex: 1;
-        min-width: 0;
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .mypage-tab {
-        padding: 6px 8px;
-        font-size: 12px;
-    }
 }
 
 .mypage-tab {
@@ -2673,7 +2640,8 @@ small {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
+    background: #2d2d2d;
+    color: #e0e0e0;
     padding: 30px;
     border-radius: 16px;
     width: 600px;
@@ -2689,13 +2657,13 @@ small {
 .attendances-title {
     font-size: 28px;
     font-weight: 700;
-    color: #212529;
+    color: #e0e0e0;
     margin-bottom: 10px;
 }
 
 .attendances-subtitle {
     font-size: 16px;
-    color: #6c757d;
+    color: #b0b0b0;
 }
 
 .attendances-calendar {
@@ -2710,24 +2678,26 @@ small {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #e9ecef;
+    border: 2px solid #404040;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
     position: relative;
     transition: all 0.2s;
+    background: #1a1a1a;
+    color: #e0e0e0;
 }
 
 .calendar-day.checked {
-    background: #dcfce7;
+    background: #22c55e;
     border-color: #16a34a;
-    color: #16a34a;
+    color: #ffffff;
 }
 
 .calendar-day.today {
-    background: #fff3cd;
+    background: #fbbf24;
     border-color: #fbbf24;
-    color: #92400e;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -2738,14 +2708,16 @@ small {
 
 .calendar-day.future {
     opacity: 0.4;
+    color: #888;
 }
 
 .attendances-streak {
     text-align: center;
     padding: 20px;
-    background: #f8f9fa;
+    background: #3a3a3a;
     border-radius: 12px;
     margin-bottom: 20px;
+    color: #e0e0e0;
 }
 
 .streak-number {
@@ -2758,9 +2730,9 @@ small {
 .attendances-reward {
     text-align: center;
     padding: 15px;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
     border-radius: 8px;
-    color: #000;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -3677,80 +3649,6 @@ small {
     }
 }
 
-/* 360px 이하 모바일 최적화 */
-@media (max-width: 360px) {
-    /* 테이블 전체 최적화 */
-    .board-table {
-        font-size: 11px;
-        table-layout: fixed;
-    }
-    
-    .board-table th,
-    .board-table td {
-        padding: 8px 4px;
-        word-wrap: break-word;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    /* 제목 컬럼 최대 너비 설정 */
-    .board-table .title {
-        max-width: 120px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    
-    /* 번호 컬럼 최소 너비 */
-    .board-table th:first-child,
-    .board-table td:first-child {
-        min-width: 30px;
-        max-width: 40px;
-    }
-    
-    /* 날짜 컬럼 최소 너비 */
-    .board-table th:nth-child(4),
-    .board-table td:nth-child(4) {
-        min-width: 60px;
-        max-width: 70px;
-    }
-    
-    /* 조회수 컬럼 최소 너비 */
-    .board-table th:nth-child(5),
-    .board-table td:nth-child(5) {
-        min-width: 40px;
-        max-width: 50px;
-    }
-    
-    /* 제목 컬럼이 남은 공간을 모두 차지하도록 */
-    .board-table .title {
-        width: auto;
-        min-width: 80px;
-    }
-    
-    /* 테이블 스크롤 최적화 */
-    .board-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    /* 테이블 내부 요소들 */
-    .board-table th,
-    .board-table td {
-        white-space: nowrap;
-        min-width: 60px;
-    }
-    
-    /* 제목만 줄바꿈 허용 */
-    .board-table .title {
-        white-space: normal;
-        word-break: break-word;
-        max-width: 120px;
-    }
-}
-
 /* 더 작은 화면에서 추가 컬럼 숨기기 */
 @media (max-width: 480px) {
     /* 모든 게시판에서 날짜, 조회수 숨기기 */
@@ -3834,12 +3732,78 @@ small {
         padding: 15px !important;
     }
     
+    /* 모바일에서 중요한 컬럼만 표시 */
     .board-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-        max-width: 100%;
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .board-table th,
+    .board-table td {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+    
+    /* 4번째 컬럼부터 숨김 (날짜, 조회수 등) */
+    .board-table th:nth-child(n+4),
+    .board-table td:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* 제목 컬럼 너비 확장 */
+    .board-table th:nth-child(2),
+    .board-table td:nth-child(2) {
+        width: 60%;
+    }
+    
+    /* 번호 컬럼 */
+    .board-table th:nth-child(1),
+    .board-table td:nth-child(1) {
+        width: 15%;
+    }
+    
+    /* 글쓴이/신고자 컬럼 */
+    .board-table th:nth-child(3),
+    .board-table td:nth-child(3) {
+        width: 25%;
+    }
+    
+    /* 유흥후기 게시판 특별 처리 - 강제 적용 */
+    #entertainment .board-table th:nth-child(2),
+    #entertainment .board-table td:nth-child(2),
+    #entertainment .board-table th:nth-child(3),
+    #entertainment .board-table td:nth-child(3) {
+        display: none !important; /* 지역, 업소테마 숨김 */
+    }
+    
+    #entertainment .board-table th:nth-child(4),
+    #entertainment .board-table td:nth-child(4) {
+        width: 60% !important; /* 제목 컬럼 확장 */
+        display: table-cell !important;
+    }
+    
+    #entertainment .board-table th:nth-child(5),
+    #entertainment .board-table td:nth-child(5) {
+        width: 25% !important; /* 글쓴이 컬럼 */
+        display: table-cell !important;
+    }
+    
+    /* 자유게시판 특별 처리 - 강제 적용 */
+    #freeboard .board-table th:nth-child(2),
+    #freeboard .board-table td:nth-child(2) {
+        display: none !important; /* 카테고리 숨김 */
+    }
+    
+    #freeboard .board-table th:nth-child(3),
+    #freeboard .board-table td:nth-child(3) {
+        width: 60% !important; /* 제목 컬럼 확장 */
+        display: table-cell !important;
+    }
+    
+    #freeboard .board-table th:nth-child(4),
+    #freeboard .board-table td:nth-child(4) {
+        width: 25% !important; /* 글쓴이 컬럼 */
+        display: table-cell !important;
     }
     
     /* 테이블 컨테이너 너비 제한 */
@@ -3857,7 +3821,9 @@ small {
         font-size: 11px !important;
         padding: 6px 10px !important;
         white-space: nowrap !important;
-    }    
+    }
+    
+    /* 스크롤바 스타일 */
     .board-table::-webkit-scrollbar {
         height: 6px;
     }
@@ -3902,6 +3868,79 @@ small {
     .banner-ad {
         padding: 8px;
         min-height: 60px;
+    }
+    
+    /* 더 작은 화면에서 테이블 최적화 */
+    .board-table {
+        font-size: 11px;
+    }
+    
+    .board-table th,
+    .board-table td {
+        padding: 8px 6px;
+        font-size: 11px;
+    }
+    
+    /* 4번째 컬럼부터 숨김 (날짜, 조회수 등) */
+    .board-table th:nth-child(n+4),
+    .board-table td:nth-child(n+4) {
+        display: none;
+    }
+    
+    /* 제목 컬럼 너비 확장 */
+    .board-table th:nth-child(2),
+    .board-table td:nth-child(2) {
+        width: 60%;
+    }
+    
+    /* 번호 컬럼 */
+    .board-table th:nth-child(1),
+    .board-table td:nth-child(1) {
+        width: 15%;
+    }
+    
+    /* 글쓴이/신고자 컬럼 */
+    .board-table th:nth-child(3),
+    .board-table td:nth-child(3) {
+        width: 25%;
+    }
+    
+    /* 유흥후기 게시판 특별 처리 - 강제 적용 */
+    #entertainment .board-table th:nth-child(2),
+    #entertainment .board-table td:nth-child(2),
+    #entertainment .board-table th:nth-child(3),
+    #entertainment .board-table td:nth-child(3) {
+        display: none !important; /* 지역, 업소테마 숨김 */
+    }
+    
+    #entertainment .board-table th:nth-child(4),
+    #entertainment .board-table td:nth-child(4) {
+        width: 60% !important; /* 제목 컬럼 확장 */
+        display: table-cell !important;
+    }
+    
+    #entertainment .board-table th:nth-child(5),
+    #entertainment .board-table td:nth-child(5) {
+        width: 25% !important; /* 글쓴이 컬럼 */
+        display: table-cell !important;
+    }
+    
+    /* 자유게시판 특별 처리 - 강제 적용 */
+    #freeboard .board-table th:nth-child(2),
+    #freeboard .board-table td:nth-child(2) {
+        display: none !important; /* 카테고리 숨김 */
+    }
+    
+    #freeboard .board-table th:nth-child(3),
+    #freeboard .board-table td:nth-child(3) {
+        width: 60% !important; /* 제목 컬럼 확장 */
+        display: table-cell !important;
+    }
+    
+    #freeboard .board-table th:nth-child(4),
+    #freeboard .board-table td:nth-child(4) {
+        width: 25% !important; /* 글쓴이 컬럼 */
+        display: table-cell !important;
     }
     
     .banner-title {
@@ -4358,18 +4397,6 @@ small {
     </div>
 </div>
 
-<!-- 홈화면 자유게시판 글 3개 -->
-<div class="home-freeboard-section" style="margin: 40px 0;">
-    <div class="section-title" style="margin-bottom: 20px;">
-        <span>💬</span> 최신 자유게시판
-    </div>
-    <div class="home-freeboard-posts" id="homeFreeboardPosts">
-        <!-- 자유게시판 글 3개가 여기에 표시됩니다 -->
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="showPage('freeboard', event)" class="btn btn-primary" style="padding: 10px 20px; background: linear-gradient(135deg, #ad3a23 0%, #ef4444 100%); color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">더보기</button>
-    </div>
-</div>
 
 <div class="banner-section">
     <div class="section-title">
@@ -5792,7 +5819,7 @@ async function loadattendancesData(userId, token) {
                 
                 // 이번 달 출석 기록 적용
                 recentAttendances.forEach(record => {
-                    const recordDate = new Date(record.date);
+                    const recordDate = new Date(record.date);ㅊㅊ
                     const koreanRecordDate = new Date(recordDate.getTime() + koreanOffset);
                     const recordDateStr = koreanRecordDate.toISOString().split('T')[0];
                     user.attendances.monthlyChecks[recordDateStr] = true;
@@ -6318,35 +6345,35 @@ function createModals() {
     // 회원가입 모달
     const signupModalHTML = `
         <div id="signupModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #2d2d2d; padding: 30px; border-radius: 12px; width: 450px; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2); border: 1px solid #404040;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 12px; width: 450px; max-height: 80vh; overflow-y: auto; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
                 <h2 style="margin-bottom: 20px; color: #ffffff; font-weight: 600;">회원가입</h2>
                 <div style="margin-bottom: 16px;">
-                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: #e0e0e0;">아이디 <span style="color: #ad3a23;">*</span></label>
-                    <input type="text" id="signupId" style="width: 100%; padding: 10px 12px; border: 1px solid #404040; border-radius: 6px; font-size: 14px; background: #1a1a1a; color: #e0e0e0;" placeholder="4~16자 영문, 숫자">
-                    <div id="idCheckMsg" style="font-size: 12px; margin-top: 4px; color: #b0b0b0;"></div>
+                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500;">아이디 <span style="color: #ad3a23;">*</span></label>
+                    <input type="text" id="signupId" style="width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px;" placeholder="4~16자 영문, 숫자">
+                    <div id="idCheckMsg" style="font-size: 12px; margin-top: 4px;"></div>
                 </div>
                 <div style="margin-bottom: 16px;">
-                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: #e0e0e0;">비밀번호 <span style="color: #ad3a23;">*</span></label>
-                    <input type="password" id="signupPw" style="width: 100%; padding: 10px 12px; border: 1px solid #404040; border-radius: 6px; font-size: 14px; background: #1a1a1a; color: #e0e0e0;" placeholder="6자 이상">
+                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500;">비밀번호 <span style="color: #ad3a23;">*</span></label>
+                    <input type="password" id="signupPw" style="width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px;" placeholder="6자 이상">
                 </div>
                 <div style="margin-bottom: 16px;">
-                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: #e0e0e0;">비밀번호 확인 <span style="color: #ad3a23;">*</span></label>
-                    <input type="password" id="signupPwConfirm" style="width: 100%; padding: 10px 12px; border: 1px solid #404040; border-radius: 6px; font-size: 14px; background: #1a1a1a; color: #e0e0e0;">
-                    <div id="pwCheckMsg" style="font-size: 12px; margin-top: 4px; color: #b0b0b0;"></div>
+                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500;">비밀번호 확인 <span style="color: #ad3a23;">*</span></label>
+                    <input type="password" id="signupPwConfirm" style="width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px;">
+                    <div id="pwCheckMsg" style="font-size: 12px; margin-top: 4px;"></div>
                 </div>
                 <div style="margin-bottom: 16px;">
-                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500; color: #e0e0e0;">닉네임 <span style="color: #ad3a23;">*</span></label>
-                    <input type="text" id="signupNickname" style="width: 100%; padding: 10px 12px; border: 1px solid #404040; border-radius: 6px; font-size: 14px; background: #1a1a1a; color: #e0e0e0;" placeholder="2~10자">
+                    <label style="display: block; margin-bottom: 6px; font-size: 14px; font-weight: 500;">닉네임 <span style="color: #ad3a23;">*</span></label>
+                    <input type="text" id="signupNickname" style="width: 100%; padding: 10px 12px; border: 1px solid #dee2e6; border-radius: 6px; font-size: 14px;" placeholder="2~10자">
                 </div>
                 <div style="margin-bottom: 20px;">
-                    <label style="display: flex; align-items: center; font-size: 14px; color: #e0e0e0;">
+                    <label style="display: flex; align-items: center; font-size: 14px;">
                         <input type="checkbox" id="agreeTerms" style="margin-right: 8px;">
                         <span>이용약관 및 개인정보처리방침에 동의합니다</span>
                     </label>
                 </div>
                 <div style="display: flex; gap: 10px;">
                     <button onclick="doSignup()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #ad3a23 0%, #ef4444 100%); color: white; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">가입하기</button>
-                    <button onclick="closeSignupModal()" style="flex: 1; padding: 12px; background: #404040; color: #e0e0e0; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">취소</button>
+                    <button onclick="closeSignupModal()" style="flex: 1; padding: 12px; background: #e9ecef; color: #495057; border: none; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer;">취소</button>
                 </div>
                 <div style="text-align: center; margin-top: 16px;">
                     <a href="#" onclick="switchToLogin()" style="color: #ad3a23; text-decoration: none; font-size: 14px;">이미 회원이신가요? 로그인</a>
@@ -6412,11 +6439,6 @@ async function checkIdAvailable(id) {
 document.addEventListener('DOMContentLoaded', function() {
     // 모달 생성
     createModals();
-    
-    // 홈페이지 자유게시판 글 렌더링
-    setTimeout(() => {
-        renderHomeFreeboard();
-    }, 500);
     
     // 아이디 입력 시 실시간 체크
     const signupIdInput = document.getElementById('signupId');
@@ -8368,14 +8390,22 @@ createNotification(NOTIFICATION_TYPES.POINT, {
         const userData = JSON.parse(localStorage.getItem('user') || '{}');
         
         if (token && userData.id) {
+            // Strapi 필드명 시도 (두 가지 방법 모두 시도)
             const commentData = {
                 data: {
                     content: content,
-                    users_permissions_user: userData.id,
+                    user: userData.id,
+                    users_permissions_user: userData.id, // 백업 필드명
                     post: parseInt(postId) || postId,
                     parent: parentId ? parseInt(parentId) : null 
                 }
             };
+            
+            // 디버깅을 위한 로그 추가
+            console.log('🔍 댓글 API 요청 데이터:', commentData);
+            console.log('🔍 사용자 ID:', userData.id);
+            console.log('🔍 게시글 ID:', postId);
+            console.log('🔍 토큰 존재:', !!token);
             
             const response = await fetch('https://totogangs.com/api/comments', {
                 method: 'POST',
@@ -8389,9 +8419,16 @@ createNotification(NOTIFICATION_TYPES.POINT, {
             if (response.ok) {
                 const savedComment = await response.json();
                 newComment.strapiId = savedComment.data.id;
+                console.log('✅ 댓글 저장 성공:', savedComment);
             } else {
                 const errorData = await response.json().catch(() => ({}));
-                console.error('댓글 저장 실패:', response.status, errorData);
+                console.error('❌ 댓글 저장 실패:', response.status, errorData);
+                console.error('❌ 응답 헤더:', response.headers);
+                
+                // 더 자세한 오류 정보 출력
+                if (errorData.error) {
+                    console.error('❌ Strapi 오류 상세:', errorData.error);
+                }
             }
         }
     } catch (error) {
@@ -9915,9 +9952,14 @@ const titleToSave = newPost.title;
 (async () => {
     try {
         const token = localStorage.getItem('token');
-	 const userData = JSON.parse(localStorage.getItem('user') || '{}');
+        const userData = JSON.parse(localStorage.getItem('user') || '{}');
         
-         if (token && userData.id) { 
+        console.log('🔍 Strapi API 연동 시작:', type);
+        console.log('🔍 토큰 존재:', !!token);
+        console.log('🔍 사용자 데이터:', userData);
+        console.log('🔍 사용자 ID:', userData.id);
+        
+        if (token && userData.id) { 
             // 파일 업로드 먼저 처리
             let uploadedFileIds = [];
             
@@ -10134,6 +10176,13 @@ cancelWrite(type);
         const token = localStorage.getItem('token');
         const userData = JSON.parse(localStorage.getItem('user') || '{}');
         
+        console.log('🔍 게시글 저장 API 연동 시작:', type);
+        console.log('🔍 토큰 존재:', !!token);
+        console.log('🔍 사용자 데이터:', userData);
+        console.log('🔍 사용자 ID:', userData.id);
+        console.log('🔍 제목:', titleToSave);
+        console.log('🔍 내용:', contentToSave);
+        
         if (token && userData.id) { 
           // 파일 업로드 먼저 처리
 let uploadedFileIds = [];
@@ -10187,7 +10236,7 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
             }
         ],
         board: boardId,
-	        users_permissions_user: userData.id,  // 원래 필드명 사용
+	user: userData.id,  // users_permissions_user 대신 user 시도
         attachments: uploadedFileIds.length > 0 ? uploadedFileIds : [],
         likes: 0,            
         dislikes: 0 
@@ -10210,8 +10259,10 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
     const savedData = await response.json();
     console.log('저장된 게시글 ID:', savedData.data.id);
 } else {
-    const errorData = await response.json();
+    const errorData = await response.json().catch(() => ({}));
     console.error('❌ Strapi 게시글 저장 실패');
+    console.error('응답 상태:', response.status);
+    console.error('응답 헤더:', response.headers);
     console.error('전체 에러:', JSON.stringify(errorData, null, 2));
     console.error('보낸 데이터:', JSON.stringify(postData, null, 2));
     console.error('userData:', userData);
@@ -10221,6 +10272,11 @@ if (uploadedFiles[type] && uploadedFiles[type].length > 0) {
         errorData.error.details.errors.forEach(err => {
             console.error(`문제 필드: ${err.path.join('.')}, 메시지: ${err.message}`);
         });
+    }
+    
+    // 일반적인 에러 메시지도 표시
+    if (errorData.error?.message) {
+        console.error('Strapi 에러 메시지:', errorData.error.message);
     }
 }
             }
@@ -10346,135 +10402,6 @@ function removeFromBlacklist(nickname) {
 }
 
    
-// 회원 랭킹 데이터 가져오기 함수
-function getTopRanking() {
-    // 로컬 사용자 데이터에서 상위 10명 반환
-    const sortedUsers = usersDB
-        .filter(user => user.role?.type !== 'admin')
-        .sort((a, b) => (b.points || 0) - (a.points || 0))
-        .slice(0, 10);
-    
-    return sortedUsers;
-}
-
-// 홈페이지 자유게시판 글 렌더링
-function renderHomeFreeboard() {
-    const container = document.getElementById('homeFreeboardPosts');
-    if (!container) return;
-    
-    const recentPosts = postsData.freeboard.slice(0, 3);
-    
-    if (recentPosts.length === 0) {
-        container.innerHTML = '<div style="text-align: center; color: #b0b0b0; padding: 20px;">아직 작성된 글이 없습니다</div>';
-        return;
-    }
-    
-    container.innerHTML = recentPosts.map(post => `
-        <div class="home-post-item" onclick="showPostDetail('freeboard', ${post.id})" style="background: #2d2d2d; border: 1px solid #404040; border-radius: 8px; padding: 16px; margin-bottom: 12px; cursor: pointer; transition: all 0.2s ease;">
-            <div class="home-post-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                <div class="home-post-title" style="color: #e0e0e0; font-weight: 500; font-size: 16px;">${post.title}</div>
-                <div class="home-post-date" style="color: #b0b0b0; font-size: 12px;">${post.date}</div>
-            </div>
-            <div class="home-post-content" style="color: #b0b0b0; font-size: 14px; line-height: 1.4; margin-bottom: 8px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
-                ${post.content}
-            </div>
-            <div class="home-post-stats" style="display: flex; gap: 12px; font-size: 12px; color: #909090;">
-                <span>👍 ${post.likes || 0}</span>
-                <span>👎 ${post.dislikes || 0}</span>
-                <span>💬 ${commentsData.freeboard[post.id]?.length || 0}</span>
-                <span>조회 ${post.views || 0}</span>
-            </div>
-        </div>
-    `).join('');
-}
-
-// 실시간 회원랭킹 렌더링
-async function renderRealTimeRanking() {
-    try {
-        // Strapi에서 실시간 사용자 데이터 가져오기
-        const response = await fetch('https://totogangs.com/api/users?sort=points:desc&pagination[limit]=10');
-        
-        if (response.ok) {
-            const data = await response.json();
-            const rankedUsers = data.filter(user => user.role?.type !== 'admin').slice(0, 10);
-            
-            // 마이페이지 랭킹 섹션 업데이트
-            const rankingContainer = document.getElementById('mypage-ranking');
-            if (rankingContainer) {
-                const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
-                
-                rankingContainer.innerHTML = `
-                    <div class="ranking-section">
-                        <h3 style="margin-bottom: 20px; color: #ffffff; font-size: 18px;">🏆 회원 랭킹</h3>
-                        <div class="my-ranking" style="background: #3a3a3a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #404040;">
-                            <h4 style="color: #ffd700; margin-bottom: 10px;">내 순위</h4>
-                            <div style="display: flex; justify-content: space-between; align-items: center;">
-                                <span style="color: #e0e0e0;">${currentUser.username || '사용자'}</span>
-                                <span style="color: #ffd700; font-weight: bold;">${currentUser.points || 0}P</span>
-                            </div>
-                        </div>
-                        <div class="top-ranking">
-                            <h4 style="color: #ffffff; margin-bottom: 15px;">TOP 10</h4>
-                            ${rankedUsers.map((user, index) => `
-                                <div class="ranking-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: ${index < 3 ? '#2d5a2d' : '#2d2d2d'}; border-radius: 6px; margin-bottom: 8px; border: 1px solid #404040;">
-                                    <div style="display: flex; align-items: center; gap: 10px;">
-                                        <span style="color: ${index === 0 ? '#ffd700' : index === 1 ? '#c0c0c0' : index === 2 ? '#cd7f32' : '#e0e0e0'}; font-weight: bold; min-width: 20px;">${index + 1}</span>
-                                        <span style="color: #e0e0e0;">${user.nickname || user.username}</span>
-                                        ${user.username === currentUser.username ? '<span style="color: #ad3a23; font-size: 12px;">(나)</span>' : ''}
-                                    </div>
-                                    <span style="color: #ffd700; font-weight: bold;">${user.points || 0}P</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-            }
-        } else {
-            // Strapi 연결 실패시 로컬 데이터 사용
-            console.log('Strapi 연결 실패, 로컬 데이터 사용');
-            renderLocalRanking();
-        }
-    } catch (error) {
-        console.error('실시간 랭킹 조회 오류:', error);
-        renderLocalRanking();
-    }
-}
-
-// 로컬 랭킹 렌더링 (백업)
-function renderLocalRanking() {
-    const rankingContainer = document.getElementById('mypage-ranking');
-    if (!rankingContainer) return;
-    
-    const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
-    const rankedUsers = getTopRanking();
-    
-    rankingContainer.innerHTML = `
-        <div class="ranking-section">
-            <h3 style="margin-bottom: 20px; color: #ffffff; font-size: 18px;">🏆 회원 랭킹</h3>
-            <div class="my-ranking" style="background: #3a3a3a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #404040;">
-                <h4 style="color: #ffd700; margin-bottom: 10px;">내 순위</h4>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span style="color: #e0e0e0;">${currentUser.username || '사용자'}</span>
-                    <span style="color: #ffd700; font-weight: bold;">${currentUser.points || 0}P</span>
-                </div>
-            </div>
-            <div class="top-ranking">
-                <h4 style="color: #ffffff; margin-bottom: 15px;">TOP 10</h4>
-                ${rankedUsers.map((user, index) => `
-                    <div class="ranking-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: ${index < 3 ? '#2d5a2d' : '#2d2d2d'}; border-radius: 6px; margin-bottom: 8px; border: 1px solid #404040;">
-                        <div style="display: flex; align-items: center; gap: 10px;">
-                            <span style="color: ${index === 0 ? '#ffd700' : index === 1 ? '#c0c0c0' : index === 2 ? '#cd7f32' : '#e0e0e0'}; font-weight: bold; min-width: 20px;">${index + 1}</span>
-                            <span style="color: #e0e0e0;">${user.nickname || user.username}</span>
-                            ${user.username === currentUser.username ? '<span style="color: #ad3a23; font-size: 12px;">(나)</span>' : ''}
-                        </div>
-                        <span style="color: #ffd700; font-weight: bold;">${user.points || 0}P</span>
-                    </div>
-                `).join('')}
-            </div>
-        </div>
-    `;
-}
-
 // 회원 랭킹 렌더링 함수
 async function renderUserRanking() {
     try {
@@ -10698,10 +10625,6 @@ window.showPage = async function(pageId, event) {
     // 마이페이지 렌더링 추가!
     if (pageId === 'mypage') {
         renderMyPage();
-        // 실시간 랭킹 렌더링
-        setTimeout(() => {
-            renderRealTimeRanking();
-        }, 100);
     }
     
     // 관리자 페이지 렌더링 추가!
@@ -10715,11 +10638,6 @@ window.showPage = async function(pageId, event) {
             createNoticeWriteForm();
         }
         renderNotices();
-    }
-    
-    // 홈페이지 렌더링 추가!
-    if (pageId === 'home') {
-        renderHomeFreeboard();
     }
 
     setTimeout(() => {
@@ -11613,8 +11531,8 @@ function renderAdminPage() {
                 color: white;
             }
             .btn-secondary {
-                background: #404040;
-                color: #e0e0e0;
+                background: #6c757d;
+                color: white;
             }
             .btn-success {
                 background: #28a745;
@@ -11623,14 +11541,14 @@ function renderAdminPage() {
 
 /* 버튼 색상 강제 지정 */
 .btn.btn-secondary {
-    background: #404040 !important;
-    color: #e0e0e0 !important;
-    border: 1px solid #404040 !important;
+    background: #6c757d !important;
+    color: #fff !important;
+    border: 1px solid #6c757d !important;
 }
 
 .btn.btn-secondary:hover {
-    background: #555555 !important;
-    border-color: #555555 !important;
+    background: #5a6268 !important;
+    border-color: #545b62 !important;
 }
 
         </style>
@@ -11972,7 +11890,6 @@ function renderMyPage() {
                 <button class="mypage-tab active" onclick="switchMypageTab('posts')">내가 쓴 글</button>
                 <button class="mypage-tab" onclick="switchMypageTab('comments')">내가 쓴 댓글</button>
                 <button class="mypage-tab" onclick="switchMypageTab('points')">포인트 내역</button>
-                <button class="mypage-tab" onclick="switchMypageTab('ranking')">회원 랭킹</button>
             </div>
             
             <div id="mypage-posts" class="mypage-tab-content active">
@@ -12023,32 +11940,6 @@ function renderMyPage() {
                     </div>
                 `).join('') : '<div class="mypage-empty">포인트 내역이 없습니다</div>'}
             </div>
-            
-            <div id="mypage-ranking" class="mypage-tab-content">
-                <div class="ranking-section">
-                    <h3 style="margin-bottom: 20px; color: #ffffff; font-size: 18px;">🏆 회원 랭킹</h3>
-                    <div class="my-ranking" style="background: #3a3a3a; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #404040;">
-                        <h4 style="color: #ffd700; margin-bottom: 10px;">내 순위</h4>
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <span style="color: #e0e0e0;">${currentUser}</span>
-                            <span style="color: #ffd700; font-weight: bold;">${JSON.parse(localStorage.getItem('user') || '{}').points || 0}P</span>
-                        </div>
-                    </div>
-                    <div class="top-ranking">
-                        <h4 style="color: #ffffff; margin-bottom: 15px;">TOP 10</h4>
-                        ${getTopRanking().map((user, index) => `
-                            <div class="ranking-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: ${index < 3 ? '#2d5a2d' : '#2d2d2d'}; border-radius: 6px; margin-bottom: 8px; border: 1px solid #404040;">
-                                <div style="display: flex; align-items: center; gap: 10px;">
-                                    <span style="color: ${index === 0 ? '#ffd700' : index === 1 ? '#c0c0c0' : index === 2 ? '#cd7f32' : '#e0e0e0'}; font-weight: bold; min-width: 20px;">${index + 1}</span>
-                                    <span style="color: #e0e0e0;">${user.nickname || user.username}</span>
-                                    ${user.nickname === currentUser ? '<span style="color: #ad3a23; font-size: 12px;">(나)</span>' : ''}
-                                </div>
-                                <span style="color: #ffd700; font-weight: bold;">${user.points || 0}P</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            </div>
         </div>
     `;
 }
@@ -12060,13 +11951,6 @@ function switchMypageTab(tab) {
     
     event.target.classList.add('active');
     document.getElementById(`mypage-${tab}`).classList.add('active');
-    
-    // 랭킹 탭 선택 시 실시간 랭킹 업데이트
-    if (tab === 'ranking') {
-        setTimeout(() => {
-            renderRealTimeRanking();
-        }, 100);
-    }
 }
 
 
